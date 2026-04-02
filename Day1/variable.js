@@ -43,10 +43,10 @@ let age1; //undefined cause there are no data assigned
 let savings = null;
 
 //6.
-let company
-let techStack
-let isHiring
-let minSalary
+//let company
+//let techStack
+//let isHiring
+//let minSalary
 
 //7.
 let company = 'Noah Business Application'
@@ -65,7 +65,7 @@ let age =  23
 
 //09 single line
 
-let fname = 'Clarence Jake',  lname = 'Bonilla', maritalStatus = 'Single', country = 'Philippines', age =  23
+//let fname = 'Clarence Jake',  lname = 'Bonilla', maritalStatus = 'Single', country = 'Philippines', age =  23
 
 
 //10
