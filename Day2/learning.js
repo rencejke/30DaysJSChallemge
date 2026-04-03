@@ -54,7 +54,152 @@ console.log(Math.sqrt(100)) // 10
 
 console.log(Math.sqrt(2))       // 1.4142135623730951
 
+//Power
 console.log(Math.pow(3, 2))     // 9
-
 console.log(Math.pow(5, 2))     // 25
+console.log(Math.E)             //2.718281828459045
+
+// Logarithm
+// Returns the natural logarithm with base E of x, Math.log(x)
+console.log(Math.log(2))        // 0.6931471805599453
+console.log(Math.log(10))       // 2.302585092994046
+
+// Returns the natural logarithm of 2 and 10 respectively
+console.log(Math.LN2)           // 0.6931471805599453
+console.log(Math.LN10)          // 2.302585092994046
+
+//Trigonometry
+console.log(Math.sin(0)) //0
+console.log(Math.sin(60)) //--0.3048106211022167
+
+console.log(Math.cos(0))   //1
+console.log(Math.cos(60))  //-0.9524129804151563
+
+//random generator 0-10
+
+let random2 = Math.random()
+let computeRandomness = Math.floor(random2 * 11)
+
+console.log(computeRandomness)
+
+
+//STRINGS=======================================================================================================
+
+let space = ' '           // an empty space string
+let firstName = 'Clarence Jake'
+let lastName = 'Bonilla'
+let country = 'Philippines'
+let city = 'San Pablo'
+let language = 'JavaScript'
+let job = 'Business Apllication Developer'
+let quote = "The saying,'Seeing is Believing' is not correct in 2020."
+let quotWithBackTick = `The saying,'Seeing is Believing' is not correct in 2020.`
+let age = 25
+
+let fullName = firstName + space + lastName
+console.log(fullName)
+console.log('My name is ' + fullName + '. I live in ' + country + ' specifically in ' + city + '. I am ' + age + ' years old. ' + ' My current job is ' + job + '.')
+
+const paragraph = "My name is Asabeneh Yetayeh. I live in Finland, Helsinki.\
+I am a teacher and I love teaching. I teach HTML, CSS, JavaScript, React, Redux, \
+Node.js, Python, Data Analysis and D3.js for anyone who is interested to learn. \
+In the end of 2019, I was thinking to expand my teaching and to reach \
+to global audience and I started a Python challenge from November 20 - December 19.\
+It was one of the most rewarding and inspiring experience.\
+Now, we are in 2020. I am enjoying preparing the 30DaysOfJavaScript challenge and \
+I hope you are enjoying too."
+
+console.log(paragraph)
+
+/*
+escape squence in string
+
+\n: new line
+\t: Tab, means 8 spaces
+\\: Back slash
+\': Single quote (')
+\": Double quote (")
+
+*/
+
+console.log('I hope everyone is enjoying the 30 Days Of JavaScript challenge.\nDo you ?') // line break
+console.log('Days\tTopics\tExercises') //Days  Topics  Exercises
+console.log('Day 1\t3\t5') //Day 1 3 5
+console.log('This is a backslash symbol (\\)') // This is a backslash  symbol (\)
+
+//Template Literals (Templates Strings)
+// `String literal text`
+// `String literal text ${expression}`
+
+let a = 10 
+let b = 20
+
+console.log(`The summation of ${a} and ${b} is ${a + b}`) //The summation of 10 and 20 is 30
+console.log(`${a} is greater than ${b}: ${a > b}`) //10 is greater than 20: false
+
+//string methods
+
+//1.length
+
+let js = 'Javascript'
+console.log(js.length); //10
+
+let firstName2 = 'Clarence'
+console.log(firstName2.length) //8
+
+//2.Accessing characters
+
+let js2 = 'Javascript'
+let firstLetter = js2[0]
+
+console.log(firstLetter) //J
+console.log(js2[1]) //a
+console.log(js2[2]) //v
+
+//3 toUpperCase()
+console.log(js2.toUpperCase()) //JAVASCRIPT
+
+//4 toLowerCase()
+console.log(js2.toLowerCase()) //javascript
+
+//5 substr() It takes two arguments, the starting index and number of characters to slice.
+let string = 'JavaScript'
+//index starts with 0 so J is 0
+console.log(string.substr(4,6))    // Script
+
+//6 substring(): It takes two arguments, the starting index and the stopping index but it doesn't include the character at the stopping index.
+
+let string2 = 'JavaScript'
+console.log(string2.substring(0,4)) //Java
+console.log(string2.substring(4,10)) //Script
+
+let string3 = '30 Days Of JavaScript'
+console.log(string3.split())  // Changes to an array -> ["30 Days Of JavaScript"]
+console.log(string3.split(' '))  [ '30', 'Days', 'Of', 'JavaScript' ]
+
+let string4 ='Clarence'
+console.log(string4.split('')) // Split to an array at each letter -> ['C', 'l', 'a', 'r', 'e', 'n', 'c', 'e']
+
+let countries = 'Finland, Sweden, Norway, Denmark, and Iceland'
+console.log(countries.split(','))  // split to any array at comma -> ["Finland", " Sweden", " Norway", " Denmark", " and Iceland"]
+console.log(countries.split(', ')) //  ["Finland", "Sweden", "Norway", "Denmark", "and Iceland"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
