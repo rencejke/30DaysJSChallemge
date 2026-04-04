@@ -173,6 +173,7 @@ let string2 = 'JavaScript'
 console.log(string2.substring(0,4)) //Java
 console.log(string2.substring(4,10)) //Script
 
+//7 split()
 let string3 = '30 Days Of JavaScript'
 console.log(string3.split())  // Changes to an array -> ["30 Days Of JavaScript"]
 console.log(string3.split(' '))  [ '30', 'Days', 'Of', 'JavaScript' ]
@@ -183,6 +184,148 @@ console.log(string4.split('')) // Split to an array at each letter -> ['C', 'l',
 let countries = 'Finland, Sweden, Norway, Denmark, and Iceland'
 console.log(countries.split(','))  // split to any array at comma -> ["Finland", " Sweden", " Norway", " Denmark", " and Iceland"]
 console.log(countries.split(', ')) //  ["Finland", "Sweden", "Norway", "Denmark", "and Iceland"]
+
+//8 trim() --removes trailing spaces at the beginning or the end of the string
+
+let string5 = '   30 Days Of JavaScript   '
+console.log(string5)
+console.log(string5.trim(' ')) //removes space at the beginning and the end
+console.log(string5.trim())  // still removes spaces at the beginning and the end of the string
+
+//9 include() returns a boolean. If a substring exist in a string, it returns true, otherwise it returns false. 
+//CASE SENSITIVE
+
+let string6 = '30 Days Of JavaScript'
+
+
+console.log(string6.includes('Days'))     // true
+console.log(string6.includes('days')) // false - case sensitive
+console.log(string6.includes('Script'))   // true
+console.log(string6.includes('script'))   // false
+console.log(string6.includes('java'))     // false
+console.log(string6.includes('Java'))     // true
+
+//10 replace takes as a parameter the old substring and a new substring.
+//CASE SENSITIVE
+//string.replace(oldsubstring, newsubstring)
+
+let string7 = '30 days of JavaScript'
+
+console.log(string7.replace('JavaScript', 'Python'))
+
+//11 charAt() Takes index and it returns the value at that index (also gets spaces)
+//string.charAt(index)
+//index start at 0
+
+let string8 = '30 Days Of JavaScript'
+console.log(string8.charAt(0)) //3
+
+let getLastIndex = string8.length - 1
+console.log(string8.charAt(getLastIndex)) //t
+
+//12 charCodeAt()  Takes index and it returns char code (ASCII number) of the value at that index
+ 
+let string9 = '30 Days Of JavaScript'
+console.log(string.charCodeAt(3))   // D ASCII number is 68
+
+let lastIndex = string9.length - 1
+console.log(string.charCodeAt(lastIndex)) // t ASCII is 116
+
+//13 indexOf(): Takes a substring and if the substring exists in a string it returns the first position else -1
+//CASE SENSITIVE
+
+let string10 = '30 Days Of JavaScript'
+
+console.log(string10.indexOf('D'))          // 3
+console.log(string10.indexOf('Days'))       // 3
+console.log(string10.indexOf('a'))       // 4
+console.log(string10.indexOf('A'))       // -1
+console.log(string10.indexOf('JavaScript')) // 11
+console.log(string10.indexOf('Script'))     //15
+console.log(string10.indexOf('script'))     // -1
+
+//14 lastIndexOf(): Takes a substring and if the substring exists in a string it returns the last position of the substring 
+//else - 1
+//CASE SENSITIVE
+
+
+let string11 = 'I love JavaScript. If you do not love JavaScript what else can you love.'
+
+console.log(string11.lastIndexOf('love')) //67 - last position is in index 67
+console.log(string11.lastIndexOf('you'))  //63 - last position is in index 63
+console.log(string11.lastIndexOf('l'))  //67
+console.log(string11.lastIndexOf('y'))  //63
+
+
+//15 concat(): it takes many substrings and joins them.
+
+let string12 = '30'
+let string13 = 'Days Of JavaScript'
+let intoArray = string13.split(' ')
+
+console.log(intoArray) //[ 'Days', 'Of', 'JavaScript' ]
+console.log(string12.concat(intoArray[0], intoArray[1], intoArray[2])) 
+
+let string15 = '30'
+console.log(string15.concat("Days", "Of", "JavaScript")) // 30DaysOfJavaScript
+
+//16 startsWith() : it takes a substring as an argument and it checks if the string starts with that specified substring. 
+//returns true or false --- CASE SENSITIVE
+
+//syntax
+//string.startsWith(substring)
+
+let string16 =  'Love is the best to in this world'
+
+console.log(string16.startsWith('Love'))   // true
+console.log(string16.startsWith('love'))   // false
+
+
+//17 endsWith() : it takes a substring as an argument and it checks if the string starts with that specified substring. 
+//returns true or false --- CASE SENSITIVE
+
+//syntax
+//string.endsWith(substring)
+
+let string17  =  'Love is the best to in this world'
+
+console.log(string16.startsWith('world'))   // true
+console.log(string16.startsWith('World'))   // false
+console.log(string16.startsWith('in this world'))   // true
+
+/*18 search: it takes a substring as an argument and it returns the index of the first match. 
+The search value can be a string or a regular expression pattern. */
+
+let string18 = 'I love JavaScript. If you do not love JavaScript what else can you love.'
+console.log(string.search('love')) //2
+console.log(string.search('/javascript/gi')) //7 
+
+/*
+g -means search in the whole text
+i -means case insensitive
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
