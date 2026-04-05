@@ -295,16 +295,156 @@ console.log(string16.startsWith('in this world'))   // true
 
 /*18 search: it takes a substring as an argument and it returns the index of the first match. 
 The search value can be a string or a regular expression pattern. */
+//CASE SENSTITIVE
 
 let string18 = 'I love JavaScript. If you do not love JavaScript what else can you love.'
 console.log(string.search('love')) //2
-console.log(string.search('/javascript/gi')) //7 
+console.log(string18.search(/javascript/gi)) // 7
 
 /*
 g -means search in the whole text
 i -means case insensitive
 
 */
+
+//19 match()
+/*
+match: it takes a substring or regular expression pattern 
+as an argument and it returns an array if there is match if not it returns null. 
+*/
+
+let string20 = 'I love JavaScript. If you do not love JavaScript what else can you love.'
+let patternOne = /love/     // with out any flag
+let patternTwo = /love/gi   // g-means to search in the whole text, i - case insensitive
+
+console.log(string20.match('love'))
+/*
+[
+  'love',
+  index: 0,
+  input: 'I love JavaScript. If you do not love JavaScript what else can you love.',
+  groups: undefined
+]
+*/
+console.log(string20.match(/love/gi)) //[ 'love', 'love', 'love' ]
+
+//extract number from text using regular expression
+let txt = 'In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge'
+let regEx = /\d/g 
+let regEx2 = /\d+/g
+let regEx3 = /\d+/
+
+// d with escape character means d not a normal d instead acts a digit
+// + means one or more digit numbers,
+// if there is g after that it means global, search everywhere.
+
+console.log(txt.match(regEx)) //shows single digit numbers
+/*[
+  '2', '0', '1', '9',
+  '3', '0', '2', '0',
+  '2', '0'
+] */
+
+console.log(txt.match(regEx2)) //shows all more digit numbers
+//[ '2019', '30', '2020' ]
+
+console.log(txt.match(regEx3)) // shows first more digit numbers
+/*
+[
+  '2019',
+  index: 3,
+  input: 'In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge',
+  groups: undefined
+] */
+
+//20 repat() it takes a number as argument and it returns the repeated version of the string.
+let string21 = 'love'
+console.log(string21.repeat(10)) //lovelovelovelovelovelovelovelovelovelove
+
+//DATA TYPES AND CASTING
+
+// Different javascript data types
+// Let's declare different data types
+
+let firstName3 = 'Clarence Jake'     // string
+let lastName3 = 'Bonilla'           // string
+let country3 = 'Philippines'       // string
+let city3 = 'San Pablo'           // string
+let age3 = 24                    // number, it is not my real age, do not worry about it
+let job3    // undefined, because a value was not assigned
+
+console.log(typeof 'Clarence Jake')  // string
+console.log(typeof firstName3)   // string
+console.log(typeof 10)          // number
+console.log(typeof 3.14)        // number
+console.log(typeof true)        // boolean
+console.log(typeof false)       // boolean
+console.log(typeof NaN)         // number
+console.log(typeof job3)         // undefined
+console.log(typeof undefined)   // undefined
+console.log(typeof null)        // object
+
+
+//CHANGING DATA TYPE (CASTING)
+//Casting: Converting one data type to another data type. We use parseInt(), parseFloat(), Number(), + sign, str()
+
+//String to Int
+let num = '20'
+let  numToInt = parseInt(num)
+console.log(numToInt) //20
+console.log(typeof num) //string
+console.log(typeof numToInt) //number
+
+let num2 = '20'
+let  numToInt2 = Number(num)
+console.log(numToInt) //20
+
+let num3 = '10'
+let numInt3 = +num3
+
+console.log(numInt3) // 10
+
+
+//String to float
+
+let num4 = '9.81'
+let numFloat = parseFloat(num4)
+
+console.log(numFloat) // 9.81
+
+
+let num5 = '9.81'
+let numFloat5 = Number(num5)
+
+console.log(numFloat5) // 9.81
+
+let num6 = '9.81'
+let numFloat6 = +num6
+
+console.log(numFloat6) // 9.81
+
+//FLOAT TO INT
+
+let numf = 9.81
+let numInt = parseInt(numf)
+
+console.log(numInt) // 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
