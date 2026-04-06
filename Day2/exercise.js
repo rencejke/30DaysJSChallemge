@@ -91,14 +91,6 @@ console.log(combine.concat(' ', 'JavaScript')) //30 Days of JavaScript
 //25
 console.log(challenge.repeat(2)) //30 Days Of JavaScript30 Days Of JavaScript
 
-//EXERCISE 2
-
-
-
-
-
-
-
 
 
 
