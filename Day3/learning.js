@@ -181,7 +181,7 @@ console.log('milk'.length != 'meat'.length)      // false, 4 == 4
 console.log('tomato'.length == 'potato'.length)  // true, 6 == 6 
 console.log('python'.length > 'dragon'.length)   // false, 6 > 5
 
-//logical operators
+//2. logical operators
 
 // && ampersand operator example (AND)
 
@@ -207,9 +207,9 @@ let isLightOff = !isLightOn2           // false
 let isMarried2 = !false                // true
 
 
-// Increment Operator
+//3. Increment Operator
 
-//1 Pre Increment
+// Pre Increment
 //Increase first, then use the value
 let count = 0
 console.log(++count) // 1
@@ -217,7 +217,7 @@ console.log(count)   // 1
 console.log(++count) // 2
 console.log(count)   // 2
 
-//2 Post Increment
+// Post Increment
 //Use the current value first, then increase it after
 
 let count2 = 0
@@ -226,22 +226,22 @@ console.log(count2) //1
 console.log(count2++) // 1
 console.log(count2) //2
 
-//DECREMENT OPERATORS
+//5. DECREMENT OPERATORS
 
-//1 Pre-decrement
+// Pre-decrement
 let countD = 0
 //Subtract 1 first, then use the value
 console.log(--countD) // -1
 console.log(countD)  // -1
 
 
-//1 Post-decrement
+// Post-decrement
 //Use the value first, then subtract 1
 let countD2 = 0
 console.log(countD2--) // 0
 console.log(countD2)   // -1
 
-//TERNARY OPERATORS
+//6. TERNARY OPERATORS
 
 let isRaining2 = true
 
@@ -256,8 +256,123 @@ isRaining2
   : console.log('No need for a rain coat.') //output
 
 
-
+let number = 5
   
+number > 0
+? console.log(`${number} is a positive number`) //output
+: console.log(`${number} is a negative number`)
+
+number = Number(-5)
+
+number > 0
+? console.log(`${number} is a positive number`)
+: console.log(`${number} is a negative number`) //output
+
+//7. Operator Precedence
+
+//Precedence decides which operation happens first.
+
+//From higher → lower:
+
+/* *, / (multiplication, division)
++, - (addition, subtraction) 
+
+let a = 5, b = 3, c = 2;
+
+console.log(a + b - c);
+
+5 + 3 = 8
+8 - 2 = 6
+
+final answer is 6
+
+*/
+
+let result = 2 + 3 * 4
+
+/* * has higher precedence than +, so 
+
+3 * 4 = 12
+1 + 12 = 14
+
+Final answer = 14
+
+*/
+
+//Associativity (direction of execution)
+
+let result2 = 10 - 5 - 2;
+
+//Same operator (-), so go left → right:
+
+/* 
+
+LEFT TO RIGHT
+
+10 - 5 = 5
+5 - 2 = 3
+
+Final answer is 3
+
+*/
+
+
+let result3 = 2 ** 3 ** 2;
+
+
+/*
+
+RIGHT TO LEFT
+
+3 ** 2 = 9
+2 ** 9 = 512
+
+Final answer: 512
+
+Why right to left? because exponents are special
+
+
+let x = - -5;
+
+Most operators → left to right
+Right to left → mainly:
+** (exponent)
+= (assignment)
+
+*/
+  
+//8. windows function
+
+//alert
+// alert() method displays an alert box with a specified message and an OK button
+
+alert('message')
+
+//do not use alert too much because its annoying
+
+//Window prompt() method
+
+prompt('requiredtext', 'optional')
+
+let number2 = prompt('Enter number', 'Input number here')
+console.log(number2)
+
+//confirm() method
+
+/* confirm() shows a popup with a message and OK and Cancel buttons.
+
+Click OK → returns true
+Click Cancel → returns false
+
+*/
+
+const agree = confirm('Are you sure you like to delete? ')
+console.log(agree) // result will be true or false based on what you click on the dialog box
+
+
+
+
+
 
 
 
