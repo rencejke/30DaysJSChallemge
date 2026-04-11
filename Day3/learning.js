@@ -369,6 +369,111 @@ Click Cancel → returns false
 const agree = confirm('Are you sure you like to delete? ')
 console.log(agree) // result will be true or false based on what you click on the dialog box
 
+//8 DATE OBJECT
+
+/*
+
+- getFullYear()
+  Get the full year as a four digit number (yyyy)
+  ex: 2000
+
+- getMonth()
+  Get the month as a number (0-11)
+  ex: 0 (january)
+
+- getDate()
+  Get the day as a number (1-31)
+  ex: 4
+
+- getHours()
+  Get the hour (0-23)
+  ex: 0  (12:00AM)
+      23 (11:00PM)
+
+- getMinutes()
+  Get the minute (0-59)
+  ex: 56
+
+- getSeconds()
+  Get the second (0 - 59)
+  ex: 41
+
+- getMilliseconds()
+  Get the millisecond (0-999)
+  ex: 341
+
+- getTime()
+  Get the time (milliseconds since January 1, 1970)
+  ex: 1578092201341
+
+- getDay()
+  Get the weekday as a number (0-6)
+  ex: 0 (Sunday)
+      6 (Saturday)
+
+*/
+
+//creating a time object
+
+const now = new Date()
+console.log(now) //2026-04-11T09:23:20.755Z
+
+//now we have created a time object, we can now access any date time information uising the get method above
+
+//Getting full year
+console.log(now.getFullYear()) //2026
+
+//Getting month
+console.log(now.getMonth()) //3 (April)
+
+//Getting date
+console.log(now.getDate()) //11 (April)
+
+//Getting day
+console.log(now.getDay()) //6 (Saturday)
+
+//Getting hours
+console.log(now.getHours()) //9, this function think my curent time is 9AM
+
+//Getting minutes
+console.log(now.getMinutes()) //36, because the time is 05:36:41
+
+//Getting seconds
+console.log(now.getSeconds()) // 41, because the time is 05:36:41
+
+//Getting time
+console.log(now.getTime()) //1775885921000, this is the number of seconds passed from January 1, 1970 to April 11, 2026 05:38:41
+
+
+//Both methods return the same type of value (milliseconds since 1970)
+const allSeconds = Date.now()
+console.log(allSeconds)
+
+const timeInSeconds = new Date().getTime()
+console.log(allSeconds == timeInSeconds) //false, They’re just captured at slightly different times.
+
+//to make it true, store it once
+
+const dateNow = Date.now()
+const a = dateNow
+const b = new Date().getTime()
+
+console.log(a === b) //true
+
+//readable format dates
+
+const todayDate = new Date()
+const year = todayDate.getFullYear() // return year
+const month = todayDate.getMonth() + 1 // return month(0 - 11)
+const date = todayDate.getDate() // return date (1 - 31)
+const hours = todayDate.getHours() // return number (0 - 23)
+const minutes = todayDate.getMinutes() // return number (0 -59)
+
+console.log(`${month}/${date}/${year}  ${hours}:${minutes}`) // 4/11/2026  9:54
+
+
+
+
 
 
 
