@@ -41,3 +41,107 @@ const areaRectangle = lengths * width
 const perimeterRectangle =  2 * (lengths + width) 
 console.log(`The area of a triangle is ${areaRectangle} and the perimeter of triangle is ${perimeterRectangle}`)
 
+//4 
+
+//raidius = 5
+let PI = 3.14
+let radius = Number(prompt('Enter raidius'))
+let areaCircle = PI * radius * radius
+console.log(areaCircle) //78.5
+
+let PITwo = 3.14
+let radius2 = Number(prompt('Enter raidius'))
+let circumference = 2 * PITwo * radius2
+console.log(circumference)
+
+//5
+//calculate y = 2x -2
+
+//x = 0
+let yIntercept = 2 * x - 2
+console.log(yIntercept) //-2
+
+//y = 0
+// 0 = 2x - 2  
+// 0 + 2 = 2x - 2 + 2
+//2x = 2
+//divided both side by 2
+//x = 1
+let xIntercept = (0 + 2) / 2
+console.log(xIntercept)
+ 
+// final answer
+// (x1 y1) (x2 y2)
+// (0,-2) (1, 0)
+
+let x1a = 0 //x1
+let x2b = 1 //x2
+let y1c = -2 //y1
+let y2d = 0 //y2
+
+let slopee = (y2d - y1c)/(x2b-x1a)
+//(0 - (-2)) --> (0 + 2)
+//(1 - 0)
+//2/1 = 2
+console.log(slopee) // 2
+
+//6
+
+// slope = (y2 - y1)/(x2-x1)
+// (2, 2) and (6, 10)
+// (x1, y1) (x2, y2)
+ 
+let x1 = 2
+let x2 = 6
+let y1 = 2
+let y2 = 10
+
+let slope = (y2 - y1)/(x2-x1)
+console.log(slope) // 2
+
+//7 
+console.log(slopee === slope) //true
+
+//8
+//y = x2 + 6x + 9
+
+let x = -3
+let y =  (x ** 2) + (6 * x) + 9
+console.log(y)
+
+//9
+let hours = Number(prompt('Enter hours'))
+let ratePerHour = Number(prompt('Enter rate per hour'))
+const payComputation = hours * ratePerHour
+
+console.log(`Enter hours: ${hours}`)
+console.log(`Enter rate per hour: ${ratePerHour}`)
+console.log(`Your weekly earning is ${payComputation}`)
+
+//10
+let names = prompt('Enter name')
+
+names.length  > 7
+    ? console.log('your name is long')
+    : console.log('your name is short')
+
+//11
+
+let firstName = 'Clarence Jake'
+let lastName = 'Bonilla'
+
+
+firstName.length  > lastName.length
+    ? console.log(`Your first name, ${firstName} is longer than your family name, ${lastName}`)
+    : console.log(`Your first name, ${firstName} is shorter than your family name, ${lastName}`)
+
+//12
+let myAge = 19
+let yourAge = 25
+
+myAge > yourAge
+    ? console.log(`I am ${myAge - yourAge} years older than you`)
+    : console.log(`You are ${yourAge - myAge} years older than me`)
+
+//13
+
