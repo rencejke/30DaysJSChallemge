@@ -144,4 +144,43 @@ myAge > yourAge
     : console.log(`You are ${yourAge - myAge} years older than me`)
 
 //13
+let userYear = prompt('Enter your birth year')
+const now = new Date()
+let ageCompute =  now.getFullYear() - userYear
+const legalAge = 18
+
+console.log(`Enter birth Year: ${userYear}`)
+
+ageCompute >= 18
+    ? console.log(`You are ${ageCompute}. You are old enough to drive`)
+    : console.log(`You are ${ageCompute}. You will be allowed to driver after ${legalAge - ageCompute} years`) 
+
+//14
+let userLive = prompt('Enter number of years you live')
+let seconds = 365 * userLive * 24 * 60 * 60
+
+//there are 365 days
+//24 hrs per day
+//60 mins per hour
+//60s in 1 minute
+
+console.log(`Enter number of years you live: ${userLive}`)
+console.log(seconds)
+
+//15
+
+let currentDate = new Date()
+let currentYear = currentDate.getFullYear()
+let currentMonth = currentDate.getMonth()
+let currentDay = currentDate.getDate()
+let currentHour = currentDate.getHours()
+let currentMinute = currentDate.getMinutes()
+
+console.log(`${currentYear}-${currentMonth + 1}-${currentDay} ${currentHour}:${currentMinute}`) //2026-4-14 23:35 
+console.log(`${currentDay}-${currentMonth + 1}-${currentYear} ${currentHour}:${currentMinute}`) //14-4-2026 23:36
+console.log(`${currentDay}/${currentMonth + 1}/${currentYear} ${currentHour}:${currentMinute}`) //14/4/2026 23:37
+
+
+
+
 
