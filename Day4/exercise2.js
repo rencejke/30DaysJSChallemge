@@ -45,3 +45,12 @@ else if(seasonToLowerCase === 'june' || seasonToLowerCase === 'july' || seasonTo
 else {
      console.log(`This ${season} value is not recognized as month`)
 }
+
+
+//3
+let userInputMonth = prompt('What is the date today?:').toLowerCase()
+if(userInputMonth === 'saturday' || userInputMonth === 'sunday'){
+     console.log(`${userInputMonth} is a weekend`)
+}else{
+     console.log(`${userInputMonth} is a working day`)
+}
