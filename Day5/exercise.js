@@ -64,10 +64,49 @@ console.log(arr)
 const arr  = ['Clarence Jake Bonilla', 'Business Application Developer', {Country: 'Philippines', City: 'San Pablo'}, {isMarried: false}, 25, 'WFH',
     ['HTML','CSS', 'TAILWIND', 'SQL', 'REACT', 'AI', 'DATA']
 ]
+let computeMiddle = Math.floor(arr.length / 2)
 
 //3
 console.log(arr.length) // 7
 
 //4
 console.log(arr[0]) // Clarence Jake Bonilla
+console.log(arr[computeMiddle]) //25
 console.log(arr[arr.length - 1])  //[ 'HTML', 'CSS', 'TAILWIND', 'SQL', 'REACT', 'AI', 'DATA' ]
+
+
+//5
+
+const mixedDataTypes = [1, 'Clarence Jake', true, null, undefined, ['HTML','CSS', 'TAILWIND', 'SQL', 'REACT', 'AI', 'DATA']]
+
+console.log(mixedDataTypes.length) //6
+
+//6
+
+const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+let computeMiddle2 = Math.floor(arr.length / 2)
+
+//7
+console.log(itCompanies) //['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon' ]
+
+//8
+console.log(itCompanies.length) //7
+
+
+//9.
+console.log(itCompanies[0])
+console.log(itCompanies[computeMiddle2])
+console.log(itCompanies[itCompanies.lenght - 1])
+
+
+//10
+console.log(itCompanies[0])
+console.log(itCompanies[1])
+console.log(itCompanies[2])
+console.log(itCompanies[3])
+console.log(itCompanies[4])
+console.log(itCompanies[5])
+console.log(itCompanies[itCompanies.length - 1])
+
+//11
+
