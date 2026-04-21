@@ -109,4 +109,39 @@ console.log(itCompanies[5])
 console.log(itCompanies[itCompanies.length - 1])
 
 //11
+const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
 
+itCompanies[0] = itCompanies[0].toUpperCase()
+itCompanies[1] = itCompanies[1].toUpperCase()
+itCompanies[2] = itCompanies[0].toUpperCase()
+itCompanies[3] = itCompanies[1].toUpperCase()
+itCompanies[4] = itCompanies[0].toUpperCase()
+itCompanies[5] = itCompanies[1].toUpperCase()
+itCompanies[6] = itCompanies[1].toUpperCase()
+
+console.log(itCompanies)
+/*
+[
+  'FACEBOOK',
+  'GOOGLE',
+  'FACEBOOK',
+  'GOOGLE',
+  'FACEBOOK',
+  'GOOGLE',
+  'GOOGLE'
+]
+*/
+
+//12
+const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+let arrayToString = itCompanies.join(',')
+
+console.log(`${arrayToString} are big IT companies.`) //Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon are big IT companies.
+
+
+//13
+const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+itCompanies.includes('PWC') ? console.log('PWC') : console.log('Company is not found') //Company is not found
+
+//14
