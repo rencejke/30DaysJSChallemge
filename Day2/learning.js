@@ -289,9 +289,9 @@ console.log(string16.startsWith('love'))   // false
 
 let string17  =  'Love is the best to in this world'
 
-console.log(string16.startsWith('world'))   // true
-console.log(string16.startsWith('World'))   // false
-console.log(string16.startsWith('in this world'))   // true
+console.log(string16.endsWith('world'))   // true
+console.log(string16.endsWith('World'))   // false
+console.log(string16.endsWith('in this world'))   // true
 
 /*18 search: it takes a substring as an argument and it returns the index of the first match. 
 The search value can be a string or a regular expression pattern. */
@@ -357,7 +357,7 @@ console.log(txt.match(regEx3)) // shows first more digit numbers
   groups: undefined
 ] */
 
-//20 repat() it takes a number as argument and it returns the repeated version of the string.
+//20 repeat() it takes a number as argument and it returns the repeated version of the string.
 let string21 = 'love'
 console.log(string21.repeat(10)) //lovelovelovelovelovelovelovelovelovelove
 
