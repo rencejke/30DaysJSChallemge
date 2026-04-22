@@ -71,7 +71,7 @@ console.log(arr.length) // 7
 
 //4
 console.log(arr[0]) // Clarence Jake Bonilla
-console.log(arr[computeMiddle]) //25
+console.log(arr[computeMiddle]) // { isMarried: false }
 console.log(arr[arr.length - 1])  //[ 'HTML', 'CSS', 'TAILWIND', 'SQL', 'REACT', 'AI', 'DATA' ]
 
 
@@ -145,3 +145,84 @@ const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'
 itCompanies.includes('PWC') ? console.log('PWC') : console.log('Company is not found') //Company is not found
 
 //14
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+const result = [];
+
+companies[0].toLowerCase().split("o").length - 1
+
+// First, each item should be in lowercase
+// Second, split each item by "o"
+// Example: "google" → ["g", "", "gle"]
+
+// Before the first "o" → "g"
+// Between the two "o's" → "" (nothing)
+// After the second "o" → "gle"
+
+// When we check the length, it becomes 3
+
+// We subtract 1 because splitting creates one extra piece
+// So: number of "o" = parts.length - 1
+
+if ((companies[0].toLowerCase().split("o").length - 1) > 1) {
+  result.push(companies[0]); //push the item in the empty array if it has more than 1 "o"
+}
+
+if ((companies[1].toLowerCase().split("o").length - 1) > 1) {
+  result.push(companies[1]);
+}
+
+if ((companies[2].toLowerCase().split("o").length - 1) > 1) {
+  result.push(companies[2]);
+}
+
+if ((companies[3].toLowerCase().split("o").length - 1) > 1) {
+  result.push(companies[3]);
+}
+
+if ((companies[4].toLowerCase().split("o").length - 1) > 1) {
+  result.push(companies[4]);
+}
+
+if ((companies[5].toLowerCase().split("o").length - 1) > 1) {
+  result.push(companies[5]);
+}
+
+if ((companies[6].toLowerCase().split("o").length - 1) > 1) {
+  result.shift(companies[6]);
+}
+
+console.log(result)
+
+//15
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+companies.sort()
+
+console.log(companies) //['Amazon','Apple','Facebook', 'Google', 'IBM', 'Microsoft', 'Oracle' ]
+
+//16
+companies.reverse()
+console.log(companies) //['Oracle', 'Microsoft', 'IBM', 'Google', 'Facebook', 'Apple', 'Amazon' ]
+
+//17
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+console.log(companies.slice(0,3))
+
+//18
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+console.log(companies.slice(4, companies.length))
+
+
+//19
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+let middleCompany = Math.floor(companies.length / 2) // Math.floor(3.5) -> 3
+
+console.log(companies[middleCompany]) //apple
+
+
+
+
