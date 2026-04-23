@@ -224,5 +224,36 @@ let middleCompany = Math.floor(companies.length / 2) // Math.floor(3.5) -> 3
 console.log(companies[middleCompany]) //apple
 
 
+//20
+
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+companies.shift()
+console.log(companies) //[ 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon' ]
+
+//21
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+let getMiddle = Math.floor(companies.length / 2) //apple
+
+companies.splice(3,1) //Apple
+
+console.log(companies) //[ 'Facebook', 'Google', 'Microsoft', 'IBM', 'Oracle', 'Amazon' ]
+
+//22
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+companies.pop() //remove amazon
+
+console.log(companies) //[ 'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle' ]
+
+
+//23
+const companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+companies.splice('') 
+
+console.log(companies) //[] empty array
+
 
 
