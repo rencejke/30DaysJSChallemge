@@ -14,7 +14,6 @@ const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
 */
 
 
-
 //2
 
 let text =
@@ -35,3 +34,46 @@ if(!shoppingCart.includes('Sugar'))
     shoppingCart.push('Sugar')
 }
 console.log(shoppingCart)
+
+
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+
+let isAllergicToHoney = true
+
+if(isAllergicToHoney) 
+{
+    shoppingCart.pop()
+}
+
+console.log(shoppingCart) //[ 'Milk', 'Coffee', 'Tea' ]
+
+//4
+
+import { countries } from './countries.js';
+
+countries.includes('Ethiopia') ? console.log('ETHIOPIA') : countries.push('Ethiopia')
+console.log(countries) //[ 'Iceland', 'Philippines', 'India', 'Indonesia', 'Iraq', 'United States', 'China', 'Korea', 'Ethiopia']
+
+
+//5
+import { webTechs } from './webTechs.js';
+webTechs.includes('Sass') ? console.log('Sass is a CSS preprocess') : webTechs.push('Sass')
+console.log(webTechs)
+
+/*
+[
+  'HTML',       'CSS',
+  'JavaScript', 'React',
+  'Redux',      'Node',
+  'MongoDB',    'Sass'
+]
+*/
+
+//6
+const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const backEnd = ['Node','Express', 'MongoDB']
+
+const fullStack = frontEnd.concat(frontEnd, backEnd)
+
+console.log(fullStack) //["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+
