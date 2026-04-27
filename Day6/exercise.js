@@ -229,3 +229,80 @@ for(let i = 0; i <= 100; i++)
     console.log(i)
 }//print odd numbers from 0 to 100
 
+//9
+for(let i = 2; i <= 100; i++) //checking from 2 because 0 and 1 are not prime.
+{
+    let isPrime = true;  //add a flag, assume current numbers is prime numbers
+
+    for (let j = 2; j * j <= i ; j++) //or (let j = 2; j <= Math.sqrt(i); j++)
+        
+        // j * j > i 
+        // example i = 3 and 2 * 2 = 4 so I dont need to check furtther,
+        // and using this makes easier to check the value of i if priue or not
+        // 2 * 2 = 4, 3 * 3 = 9, 4 * 4 = 16, 5 * 5 =25
+        // this will only check 2 to 5 instead up to 25
+    {
+        if(i % j === 0 )
+        {
+            /* 
+            example:
+
+            25 % 2 = 1
+            25 % 3 = 1
+            25 % 4 = 1
+            25 % 5 = 0 --> 25 is not prime number 
+
+            */
+
+            isPrime = false;
+            break;
+        }
+         
+    }
+  if(isPrime)
+  {
+      console.log(i)
+  }
+  
+}//print prime numbers up to 100
+
+//10
+
+let sum = 0;
+for(let i = 0; i <= 100; i++)
+{
+    sum += i
+}
+console.log(`the sum of 0 and 100 is ${sum}`) 
+
+//11
+
+let sumOdd = 0;
+let sumEven = 0
+for(let i = 0; i <= 100; i++)
+{
+    if (i % 2 === 0)
+    {   sumEven +=i
+    } else {
+        sumOdd +=i
+    }
+}
+console.log(`The sum of all evens from 0 to 100 is ${sumEven}. And the sum of all odds from 0 to 100 is ${sumOdd}.`) 
+
+
+//12
+let sumOdd = 0;
+let sumEven = 0
+for(let i = 0; i <= 100; i++)
+{
+    if (i % 2 === 0)
+    {   sumEven += i
+    } else {
+        sumOdd += i
+    }
+}
+let arr = [sumEven, sumOdd]
+console.log(arr)
+
+
+
