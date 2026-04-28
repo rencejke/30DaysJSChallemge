@@ -305,4 +305,41 @@ let arr = [sumEven, sumOdd]
 console.log(arr)
 
 
+//13
+
+
+//13 and 14
+//generate random unique numbers and update the array's empty value
+const arr = new Array(5)
+let i = 0
+
+while(i < arr.length)  
+{
+    let random = Math.floor(Math.random() * 101)
+    
+            if(!arr.includes(random))
+            {
+                arr[i] = random
+                i++;
+            }
+}
+console.log(arr)
+
+
+//15
+let text = 'abcdefghijklmnopqrstuvwxyz12345678910'.split('')
+let characterId = ''
+
+for(let i = 0; i < 6; i++)
+{
+    let random = Math.floor(Math.random() * text.length)
+    characterId+=text[random]
+ 
+}  
+console.log(characterId) //bazs37
+
+
+
+
+
 
