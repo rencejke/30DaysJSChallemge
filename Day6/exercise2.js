@@ -138,8 +138,8 @@ console.log(arr)
 */
 
 //In above countries array, check if there is a country
-//  or countries containing the word 'land'. If there are countries containing 
-// 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+// or countries containing the word 'land'. If there are countries containing 
+//'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
 
 const countries = [
   'Albania',
@@ -164,8 +164,85 @@ for(const country of countries)
         arr.push(country)
     }
 }
-console.log(arr) //[ 'Finland', 'Ireland' ]
 
+if (arr.length > 0) {
+  console.log(arr)
+} 
+else {
+  console.log('All these countries are without land')
+}
+
+
+//In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with,
+//  print it as array. If there is no country containing the 
+// word 'ai', print 'These are countries ends without ia'.
+
+const countries = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya'
+]
+
+let arr = []
+
+for(const country of countries)
+{
+    if(country.endsWith('ia'))
+    {
+        arr.push(country)
+    }
+}
+
+if (arr.length > 0) {
+  console.log(arr)
+} 
+else {
+  console.log('These are countries ends without ia')
+}
+
+
+
+
+//not yet done
+const countries = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya'
+]
+
+let arr = []
+
+for(const country of countries)
+{
+    arr.push(country.length)
+}
+
+let arrBiggeest = []
+
+for(let i = 0; i < arr.length; i++)
+{  
+    if(arr[0] < arr[i])
+    {
+         arrBiggeest.push(arr[i])
+    } 
+}
+console.log(arrBiggeest)
 
 
 
