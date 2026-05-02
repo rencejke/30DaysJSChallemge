@@ -209,9 +209,36 @@ else {
 }
 
 
+//Using the above countries array, find the country containing the biggest number of characters.
+const countries = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya'
+]
+
+let checkLength = 0
+let longestCountry = '';
+
+for(let i = 0; i < countries.length; i++)
+{  
+    if(countries[i].length > checkLength)
+    {
+         checkLength = countries[i].length
+         longestCountry = countries[i]
+    } 
+}
+console.log(longestCountry)
 
 
-//not yet done
+//Using the above countries array, find the country containing the biggest number of characters.
 const countries = [
   'Albania',
   'Bolivia',
@@ -230,19 +257,107 @@ let arr = []
 
 for(const country of countries)
 {
-    arr.push(country.length)
-}
-
-let arrBiggeest = []
-
-for(let i = 0; i < arr.length; i++)
-{  
-    if(arr[0] < arr[i])
+    if(country.length === 5)
     {
-         arrBiggeest.push(arr[i])
-    } 
+        arr.push(country)
+    }
 }
-console.log(arrBiggeest)
+
+console.log(arr)
+
+//Find the longest word in the webTechs array
+
+const webTechs = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Redux',
+  'Node',
+  'MongoDB'
+]
+
+let checkLength = 0;
+let longestWebTech = '';
+
+for(let i = 0; i < webTechs.length; i++)
+{
+    if(webTechs[i].length > checkLength)
+    {
+        checkLength = webTechs[i].length
+        longestWebTech = webTechs[i]
+    }
+}
+console.log(longestWebTech)
+
+
+//Use the webTechs array to create the following array of arrays:
+const webTechs = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Redux',
+  'Node',
+  'MongoDB'
+]
+
+let webTechArryofArrays = []
+
+for(const webDevTech of webTechs)
+{
+    let webTechArr = []
+    
+    webTechArr.push(webDevTech)
+    webTechArr.push(webDevTech.length)
+    
+    webTechArryofArrays.push(webTechArr)
+    
+}
+
+console.log(webTechArryofArrays)
+
+
+
+//An application created using MongoDB, Express,
+//React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
+
+let mernTech = 'MongoDB, Express, React, Node'
+
+const mernArr = mernTech.split(', ')
+
+let output = ''
+
+for(const mern of mernArr)
+{
+    output += mern[0]
+}
+console.log(output)
+
+
+//Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+// using a for loop or for of loop and print out the items.
+
+
+let webTech =  ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+let newWebTechArr = []
+
+for(const webTechnology of weebTech)
+{
+  newWebTechArr.push(webTechnology)
+}
+console.log(newWebTechArr)
+
+
+//This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+
+let fruits = ['banana', 'orange', 'mango', 'lemon'] 
+let reverse = []
+for(let i = 0; i < fruits.length; i++)
+{
+    reverse.unshift(fruits[i])
+}
+console.log(reverse) // done but not yet done. will add a new method to reverse 
 
 
 
