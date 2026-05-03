@@ -238,7 +238,7 @@ for(let i = 0; i < countries.length; i++)
 console.log(longestCountry)
 
 
-//Using the above countries array, find the country containing the biggest number of characters.
+//Using the above countries array, find the country containing only 5 characters.
 const countries = [
   'Albania',
   'Bolivia',
@@ -357,10 +357,31 @@ for(let i = 0; i < fruits.length; i++)
 {
     reverse.unshift(fruits[i])
 }
-console.log(reverse) // done but not yet done. will add a new method to reverse 
+console.log(reverse) 
 
+let fruits = ['banana', 'orange', 'mango', 'lemon'] 
+let reverse = []
+for(let i = fruits.length - 1; i >= 0 ; i--)
+{
+    reverse.push(fruits[i])
+}
+console.log(reverse)
 
+//Print all the elements of array as shown below.
 
+  const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+  ]
+  
+  for(const tech of fullStack)
+  {
+      for(const item of tech)
+      {
+          console.log(item)
+      }
+  }
 
+ //Find the country containing the hightest number of characters in the countries array
 
-
+ 
