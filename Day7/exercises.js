@@ -172,7 +172,6 @@ console.log(randomUserIp())
 
 //16 Write a function which generates a randomMacAddress
 
-
 const randomMacAddress = () =>{
 
      let characters = '0123456789ABCDEF'
@@ -180,16 +179,20 @@ const randomMacAddress = () =>{
 
      let arr = []
      let length = 6
-    
-     for(let i = 0; i < characters.length; i++)
+   
+     for(let i = 0; i < length; i++)
      {
-        let arr2 = []
+       
         let random = Math.floor(Math.random() * characters.length)
-        if(arr.length != length)
-        {
-            arr.push(characters[random])
-        }
+       
+               let arr2 = []
+               let random2 = Math.floor(Math.random() * characters.length)
+               arr2.push(characters[random])
+               arr2.push(characters[random2])
+
+               arr.push(arr2.join(''))  //turn array of array into [A, F] to ['AF']
      }
-return arr
+     
+return arr.join(':') //[ '80', 'FC', 'D1', '46', '3E', '5D' ] to DA:1B:A1:7F:67:B4
 }
-console.log(randomMacAddress()) // not yet done
+console.log(randomMacAddress()) //85:6B:5B:FE:80:A3
