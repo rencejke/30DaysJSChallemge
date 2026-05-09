@@ -1,3 +1,20 @@
+//1 Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
+
+const solveLinEquation = (a, x, b, y, c) =>{
+    return (a * x) + (b * y) + c
+}
+console.log(solveLinEquation(1, 2, 3, 4, 5))
+
+/* 2 Quadratic equation is calculated as 
+follows: ax2 + bx + c = 0. Write a function which calculates
+value or values of a quadratic equation, solveQuadEquation */
+
+const solveQuadEquation = (a, x, b, c) =>
+{
+    return a * (x ** 2) + (b * x) + c
+}
+console.log(solveQuadEquation(1, 3, 4))
+
 //13 Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
 const evensAndOdds = (num) => {
