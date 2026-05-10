@@ -9,11 +9,45 @@ console.log(solveLinEquation(1, 2, 3, 4, 5))
 follows: ax2 + bx + c = 0. Write a function which calculates
 value or values of a quadratic equation, solveQuadEquation */
 
-const solveQuadEquation = (a, x, b, c) =>
+const solveQuadEquation = (a, b, c) =>
 {
-    return a * (x ** 2) + (b * x) + c
+    //formula
+    // x = (-b ± √(b² - 4ac)) / (2a)
+
+    let x1 =(-b + Math.sqrt((b ** 2) - 4 * a * c)) / (2 * a)
+    let x2 = (-b - Math.sqrt((b ** 2) - 4 * a * c)) / (2 * a)
+
+    return `{${x1}, ${x2}}`
 }
-console.log(solveQuadEquation(1, 3, 4))
+console.log(solveQuadratic(1, -1, -2))
+
+//3 Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
+
+const printArray = (arr) => {
+    
+    for(const newArr of arr)
+    {
+        console.log(newArr)
+    }
+}
+printArray([3, 7, 12, 5, 9])
+
+//4 Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
+
+const showDateTime = () =>{
+    
+    const date = new Date()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    let year = date.getFullYear()
+
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
+
+    //format - 08/01/2020 04:08
+    console.log(`${month < 10 ? '0' + month : month}/${day < 10 ? '0' + day : day}/ ${year} ${hour < 10 ? '0' + hour : hour}:${minutes < 10 ? '0' + minutes : minutes}`)
+    
+}
 
 //13 Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
