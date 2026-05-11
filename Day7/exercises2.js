@@ -49,6 +49,73 @@ const showDateTime = () =>{
     
 }
 
+//5
+const swapValues = (x, y) => {
+    
+    let arr  = []
+    let reverse = ''
+    arr.push(x)
+    arr.push(y)
+    
+    arr.reverse()
+    
+    reverse= arr.join(',')
+    
+    console.log(reverse) 
+    
+}
+
+swapValues(3, 4) 
+
+//6
+//Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+
+
+const reverseArray = (arr) => {
+    
+    let reverseArr = []
+    
+    for(let i = 0; i < arr.length; i++)
+    {
+        reverseArr.unshift(arr[i])
+    }
+    
+    return reverseArr
+}
+
+console.log(reverseArray([1, 2, 3, 4, 5]))  //[5, 4, 3, 2, 1]
+
+
+const reverseArray = (arr) => {
+    
+    let reverseArr = []
+    
+    for(let i = arr.length - 1; i  >=0; i--)
+    {
+        reverseArr.push(arr[i])
+    }
+    
+    return reverseArr
+}
+
+console.log(reverseArray([1, 2, 3, 4, 5])) //[5, 4, 3, 2, 1]
+
+//7 Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+
+const capitalizeArray = (arr) =>
+{
+    let capitizeArr = []
+    for(const capArr of arr)
+    {
+       capitizeArr.push(capArr.toUpperCase())
+    }
+
+    return capitizeArr
+    
+}
+console.log(capitalizeArray(["apple", "banana", "orange", "mango", "grapes"]))
+
+
 //13 Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
 const evensAndOdds = (num) => {
