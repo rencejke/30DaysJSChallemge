@@ -115,6 +115,103 @@ const capitalizeArray = (arr) =>
 }
 console.log(capitalizeArray(["apple", "banana", "orange", "mango", "grapes"]))
 
+//8 Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+
+const addItem = (item) =>
+{
+    const tech = ["AI", "Blockchain", "Cloud Computing", "Cybersecurity", "Web Development"];
+    
+    tech.push(item)
+    
+    return tech
+}
+
+console.log(addItem('Automation'))
+
+//9 Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+
+const removeItem = (index) =>
+{
+    const tech = ["AI", "Blockchain", "Cloud Computing", "Cybersecurity", "Web Development"];
+    let arr2 = []
+    
+    for(let i = 0; i < tech.length; i++)
+    {
+        
+        if(i != index)
+        {
+            arr2.push(tech[i])
+        }else
+        {
+            continue;
+        }
+        
+    }
+    return arr2
+ 
+}
+
+console.log(removeItem(0))
+
+//10 Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+const sumOfNumbers = (number) =>
+{
+    let sum = 0
+    for(let i = 0; i <= number; i++)
+    {
+        sum+=i
+    }
+    
+    return sum
+}
+
+console.log(sumOfNumbers(10))
+
+//11 Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+const sumOfOdd = (number) =>
+{
+    let sum = 0
+    for(let i = 0; i <= number; i++)
+    {
+        if(i % 2 != 0)
+        {
+            sum+=i
+        }
+        else
+        {
+            continue
+        }
+    }
+    
+    return sum
+}
+
+console.log(sumOfOdd(10))
+
+
+
+//12 Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+const sumOfEven = (number) =>
+{
+    let sum = 0
+    for(let i = 0; i <= number; i++)
+    {
+        if(i % 2 === 0)
+        {
+            sum+=i
+        }
+        else
+        {
+            continue
+        }
+    }
+    
+    return sum
+}
+
+console.log(sumOfEven(10))
+
+
 
 //13 Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
