@@ -308,3 +308,57 @@ const randomMacAddress = () =>{
 return arr.join(':') //[ '80', 'FC', 'D1', '46', '3E', '5D' ] to DA:1B:A1:7F:67:B4
 }
 console.log(randomMacAddress()) //85:6B:5B:FE:80:A3
+
+
+//17 Declare a function name randomHexaNumberGenerator. When this function
+//is called it generates a random hexadecimal number. The function return the hexadecimal number.
+const randomHexaNumberGenerator = () =>
+{
+    let text = '0123456789ABCDEF'
+    let length = 6
+    
+    let result = '#'
+    
+    for(let i = 0; i <= length; i++)
+    {
+        let random = Math.floor(Math.random() * text.length)
+        let arr = text.split('')
+        
+        if(result.length != 7)
+        {
+            result+=arr[random]
+        }
+        
+    }
+    return result
+    
+}
+console.log(randomHexaNumberGenerator()) //#1E5B76
+
+//17 Declare a function name userIdGenerator. 
+// When this function is called it generates seven character id. The function return the id.
+
+const userIdGenerator = () =>
+{
+    let text = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    
+    let length = 7
+    let id = ''
+
+    for(let i = 0; i < length; i++)
+    {
+        let random = Math.floor(Math.random() * text.length)
+        id+=text[random] //you can access a part of the text by its index but read only. No update
+    }
+    return id
+}
+
+console.log(userIdGenerator()) //L5RLAU0
+
+
+
+
+
+
+
+
