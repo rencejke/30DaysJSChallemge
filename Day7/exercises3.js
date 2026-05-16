@@ -42,4 +42,65 @@ const rgbColorGenerator = () =>
 }
 console.log(rgbColorGenerator()) //rgb(37, 213, 143)
 
+//3 Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+
+const arrayOfHexaColors = (number) =>
+{
+     let text = '0123456789ABCDEF'
+     let numberOfHexCharacteers = prompt('Enter the number of hex you want to geneerate')
+     let length = 6
+     let result = '#'
+     let arr = []
+
+     for(let i = 0; i < numberOfHexCharacteers; i++)
+     {
+         for(let j = 0; j < length; j++) {
+            let random = Math.floor(Math.random() * text.length)
+            if(result.length != 7) {
+                result+=text[random]
+            }
+         }
+            arr.push(result)
+            result = '#'
+         
+     }
+    return arr
+}
+console.log(arrayOfHexaColors())
+
+//4 Write a function arrayOfRgbColors which return any number of RGB colors in an array.
+const rgbColorGenerator = (number) =>
+{
+    let arr = []
+
+    for(let i = 0; i < number; i++)
+    {
+       let arr2 = []  
+       for(let j = 0; j < 3; j++)
+       {
+         let random = Math.floor(Math.random() * 256)
+         arr2.push(random)
+        }
+        arr.push(`(${arr2[0]}, ${arr2[1]}, ${arr2[2]})`)
+}
+
+   return arr
+}
+console.log(rgbColorGenerator(5)) 
+/* 
+
+[
+  '(75, 226, 48)',
+  '(237, 202, 23)',
+  '(127, 150, 65)',
+  '(35, 169, 182)',
+  '(246, 225, 231)'
+]
+
+*/
+
+
+
+
+
 
