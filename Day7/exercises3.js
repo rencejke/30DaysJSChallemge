@@ -99,6 +99,21 @@ console.log(rgbColorGenerator(5))
 
 */
 
+// 5 Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
+
+const convertHexaToRgb = (hex) =>
+{
+    let text = '0123456789ABCDEF'
+    let red = hex.substr(1, 2)
+    let blue = hex.substr(3, 2)
+    let green = hex.substr(4, 2)
+    
+    console.log(red, blue, green)
+} 
+
+convertHexaToRgb('#FF5733')// not yet done
+
+
 
 
 
