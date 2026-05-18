@@ -104,14 +104,43 @@ console.log(rgbColorGenerator(5))
 const convertHexaToRgb = (hex) =>
 {
     let text = '0123456789ABCDEF'
-    let red = hex.substr(1, 2)
-    let blue = hex.substr(3, 2)
-    let green = hex.substr(4, 2)
+    let red = hex.substr(1, 2).split('')
+    let green = hex.substr(3, 2).split('')
+    let blue = hex.substr(5, 2).split('')
     
-    console.log(red, blue, green)
+    let redCompute = text.indexOf(red[0])  * 16  + text.indexOf(red[1])
+    let  greenCompute = text.indexOf(green[0])  * 16  + text.indexOf(green[1])
+    let blueCompute = text.indexOf(blue[0])  * 16  + text.indexOf(blue[1])
+
+    
+    return`rgb(${redCompute}, ${greenCompute},  ${blueCompute})`
+    
 } 
 
-convertHexaToRgb('#FF5733')// not yet done
+console.log(convertHexaToRgb('#FF5733'))
+
+
+
+//6 
+
+const convertRgbToHexa = (hex) =>
+{
+    let getRgbNumbers = hex.match(/\d+/g)
+    let text = '0123456789ABCDEF'
+    
+    let red = getRgbNumbers[0]
+    let green = getRgbNumbers[1]
+    let blue = getRgbNumbers[2]
+
+    let computeRedPartOne = Math.floor(getRgbNumbers[0] / 16)
+    let computeRedPartTwo = getRgbNumbers[0] - (16 * computeRedPartOne)
+
+    return computeRed2
+    
+} 
+
+console.log(convertRgbToHexa('rgb(255, 87, 51)')) //not yet done
+
 
 
 
