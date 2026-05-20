@@ -121,25 +121,91 @@ console.log(convertHexaToRgb('#FF5733'))
 
 
 
-//6 
+//6 Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
 
 const convertRgbToHexa = (hex) =>
 {
     let getRgbNumbers = hex.match(/\d+/g)
     let text = '0123456789ABCDEF'
     
-    let red = getRgbNumbers[0]
-    let green = getRgbNumbers[1]
-    let blue = getRgbNumbers[2]
+    let red = Number(getRgbNumbers[0])
+    let green = Number(getRgbNumbers[1])
+    let blue = Number(getRgbNumbers[2])
 
-    let computeRedPartOne = Math.floor(getRgbNumbers[0] / 16)
-    let computeRedPartTwo = getRgbNumbers[0] - (16 * computeRedPartOne)
+    let computeRedPartOne = Math.floor(red / 16)
+    let computeRedPartTwo = red - (16 * computeRedPartOne)
 
-    return computeRed2
+    let computeGreenPartOne = Math.floor(green / 16)
+    let computeGreenPartTwo = green - (16 * computeGreenPartOne)
+    
+    let computeBluePartOne = Math.floor(blue / 16)
+    let computeBluePartTwo = blue - (16 * computeBluePartOne)
+    
+    let redPair = text[computeRedPartOne] + text[computeRedPartTwo] 
+    let greenPair = text[computeGreenPartOne]  + text[computeGreenPartTwo] 
+    let bluePair = text[computeBluePartOne]  + text[computeBluePartTwo] 
+
+
+    return `#${redPair}${greenPair}${bluePair}`
     
 } 
 
-console.log(convertRgbToHexa('rgb(255, 87, 51)')) //not yet done
+console.log(convertRgbToHexa('rgb(255, 87, 51)'))
+
+//7 Write a function generateColors which can generate any number of hexa or rgb colors.
+
+const generateColors = (type, colorToGenerate) =>
+{
+    if(type == 'rgb')
+    {
+     let arr = []
+    for(let i = 0; i < colorToGenerate; i++)
+    {
+       let arr2 = []  
+       for(let j = 0; j < 3; j++)
+       {
+         let random = Math.floor(Math.random() * 256)
+         arr2.push(random)
+        }
+        arr.push(`rgb(${arr2[0]}, ${arr2[1]}, ${arr2[2]})`)
+    }
+        return arr
+    } else if(type == 'hexa')
+     {
+        let text = '0123456789ABCDEF'
+        let length = 6
+        let result = '#'
+        let arr = []
+        
+        for(let i = 0; i < colorToGenerate; i++)
+        {
+            for(let j = 0; j < length; j++) {
+            let random = Math.floor(Math.random() * text.length)
+            if(result.length != 7) {
+                result+=text[random]
+            }
+         }
+            arr.push(result)
+            result = '#'
+         
+     }
+    return arr
+} else{
+    return 'Invalid Color Request'
+}
+    
+}
+
+console.log(generateColors('hexax', 3)) 
+    
+   
+
+   
+
+    
+   
+
+
 
 
 
