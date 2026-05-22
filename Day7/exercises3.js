@@ -154,12 +154,12 @@ console.log(convertRgbToHexa('rgb(255, 87, 51)'))
 
 //7 Write a function generateColors which can generate any number of hexa or rgb colors.
 
-const generateColors = (type, colorToGenerate) =>
+const generateColors = (type, numberToGenerate) =>
 {
     if(type == 'rgb')
     {
      let arr = []
-    for(let i = 0; i < colorToGenerate; i++)
+    for(let i = 0; i < numberToGenerate; i++)
     {
        let arr2 = []  
        for(let j = 0; j < 3; j++)
@@ -177,7 +177,7 @@ const generateColors = (type, colorToGenerate) =>
         let result = '#'
         let arr = []
         
-        for(let i = 0; i < colorToGenerate; i++)
+        for(let i = 0; i < numberToGenerate; i++)
         {
             for(let j = 0; j < length; j++) {
             let random = Math.floor(Math.random() * text.length)
@@ -197,10 +197,87 @@ const generateColors = (type, colorToGenerate) =>
 }
 
 console.log(generateColors('hexax', 3)) 
+
+//8 Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+const shuffleArray = (arrPara) =>
+{
+    let arr = []
     
-   
+    for(let i = arrPara.length; i > 0; i--)
+    {
+        
+        let random = Math.floor(Math.random() * arrPara.length)
+        arr.push(arrPara[random])
+        arrPara.splice(random, 1) //remove used index
+    } 
+     
+    return arr 
+}
+
+console.log(shuffleArray([1, 2, 3, 4, 5]))   
+
+//9 Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 
    
+const factorial = (number) =>
+{
+    let result = 1
+    for(let i = 1; i <= number; i++)
+    {
+        result *= i
+    }
+    
+    return result
+}
+console.log(factorial(4))
+
+//10 Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+const isEmpty = (input) =>
+{
+    if(input === undefined || input === '' || input === null)
+    {
+          return 'parameter is empty'
+    } else
+    {
+        return `your inputted data is ${input}`
+    }
+}
+console.log(isEmpty(5))
+
+//11  Call your function sum, it takes any number of arguments and it returns the sum.
+const sum = (...args) =>
+{
+    let sum = 0
+    for(let i = 0; i < args.length; i++)
+    {
+        sum+=args[i]
+    }
+    return sum
+}
+console.log(sum(5, 4, 3, 9, 19, 20))
+
+//12 Write a function called sumOfArrayItems, 
+// it takes an array parameter and return the sum of all the items. 
+// Check if all the array items are number types. If not give return reasonable feedback.
+
+
+const sumOfArrays = (arr) =>
+{
+    let sum = 0;
+    
+   if(arr.indexOf(''))
+   {
+    for(let i = 0; i < arr.length; i++)
+    {
+        sum+=arr[i]
+    }
+   }else
+   {
+       return 'array is not a number'
+   }
+    return sum
+}
+console.log(sumOfArrays([1,2,3,4,5])) //not yet done
 
     
    
