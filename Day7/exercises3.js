@@ -260,30 +260,83 @@ console.log(sum(5, 4, 3, 9, 19, 20))
 // it takes an array parameter and return the sum of all the items. 
 // Check if all the array items are number types. If not give return reasonable feedback.
 
-
 const sumOfArrays = (arr) =>
 {
     let sum = 0;
-    
-   if(arr.indexOf(''))
-   {
     for(let i = 0; i < arr.length; i++)
     {
-        sum+=arr[i]
+        if(typeof arr[i] == 'number')
+        {
+            sum+=arr[i]
+        }
+        else
+        {
+            return 'the array itself is not a number'
+        }
     }
-   }else
-   {
-       return 'array is not a number'
-   }
-    return sum
+  return sum
 }
-console.log(sumOfArrays([1,2,3,4,5])) //not yet done
+console.log(sumOfArrays([1, 2, 3, 4, 5])) 
 
+//13 Write a function called average, it takes an array parameter and return the average of the items.
+// Check if all the array items are number types. If not give return reasonable feedback.
     
    
+const average = (arr) =>
+{
+    let sum = 0;
+   if(arr.length !== 0)
+   {
+        for(let i = 0; i < arr.length; i++)
+    {
+        if(typeof arr[i] == 'number')
+        {
+            sum+=arr[i]
+        }
+        else
+        {
+            return 'the array itself is not a number'
+        }
+    }
+   } else
+   {
+     return 'empty parameter'
+   }
+  return sum / arr.length
+}
+console.log(average([])) 
 
+// 14. Write a function called modifyArray takes array as parameter and 
+// modifies the fifth item of the array and return the
+// array. If the array length is less than five it return 'item not found'.
 
+const modifyArray = (arrPara) => 
+{
+    let arr = []
+    if(arrPara.length >= 5)
+    {
+        for(let i = 0; i < arrPara.length; i++)
+        {
+            if(i === 4) //length is 5 but index 4 because of zero base
+            {
+                arr.push(arrPara[i].toUpperCase())
+            }else
+            {
+                arr.push(arrPara[i])
+            }
+        }
+    }
+    else
+    {
+        return 'item not found'
+    }
+    
+    return arr 
+}
 
+console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon','Microsoft',  'IBM']));
+
+//15 Write a function called isPrime, which checks if a number is prime number.
 
 
 
