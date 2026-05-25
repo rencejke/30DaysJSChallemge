@@ -338,6 +338,54 @@ console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon','Microsoft',  'I
 
 //15 Write a function called isPrime, which checks if a number is prime number.
 
+const isPrime = (number) =>
+{
+    let isPrime;
+    
+    number < 2 ? isPrime = false : isPrime = true
+    
+    for (let j = 2; j * j <= number ; j++) 
+    {
+        if(number % j === 0 )
+        {
+
+            isPrime = false;
+            break;
+        }
+         
+    }
+  if(isPrime)
+  {
+      return `${number} is a prime number`
+  } else
+  {
+      return `${number} is not a prime number`
+  }
+}
+
+console.log(isPrime(0)) //0 is not a prime number
+
+//16 Write a functions which checks if all items are unique in the array.
+const isArrUnique = (arr) =>
+{
+    let arr2 = []
+     
+    for(let i = 0; i < arr.length; i++)
+    {
+        
+        if(arr2.indexOf(arr[i]) !== -1)
+        {
+            return `array is not unqiue`
+        } else
+        {
+            arr2.push(arr[i])
+        }
+    }
+      return 'array is uniwue'  
+}
+
+console.log(isArrUnique([1, 2, 3, 4, 4, 5]))
+
 
 
 
