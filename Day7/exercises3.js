@@ -381,11 +381,52 @@ const isArrUnique = (arr) =>
             arr2.push(arr[i])
         }
     }
-      return 'array is uniwue'  
+      return 'array is unique'  
 }
 
 console.log(isArrUnique([1, 2, 3, 4, 4, 5]))
 
+
+//17 Write a function which checks if all the items of the array are the same data type.
+const isArrUnique = (arr) =>
+{
+    let type = typeof arr[0]
+     
+    for(let i = 0; i < arr.length; i++)
+    {
+        if(typeof arr[i] !== type)
+        {
+            return 'All items in the array didn\'t the same data type'
+        }
+    }
+    return `All items in the array had the same data type`
+       
+}
+
+console.log(isArrUnique([1, 2, 3, 4, 5])) //All items in the array had the same data type
+
+
+//18 JavaScript variable name does not support special
+//  characters or symbols except $ or _. Write a function 
+// isValidVariable which check if a variable is valid or invalid variable.
+
+const isValidVariable = (varDeclaration) =>
+{
+    let specialCharacters = '!@#%^&*()-+={}[]|\\:;"\'<>,.?/~'
+    
+    for(let i = 0; i < specialCharacters.length; i++)
+    {
+        if(varDeclaration.includes(specialCharacters[i]))
+        {
+            return 'Invalid variable declaration'
+        } 
+    }
+      return 'Valid variable declaration'
+}
+console.log(isValidVariable('user-name$'))
+
+//19 Write a function which returns array of seven 
+// random numbers in a range of 0-9. All the numbers must be unique.
 
 
 
