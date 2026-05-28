@@ -428,6 +428,76 @@ console.log(isValidVariable('user-name$'))
 //19 Write a function which returns array of seven 
 // random numbers in a range of 0-9. All the numbers must be unique.
 
+const sevenRandomNumbers = () =>
+{
+    let arr = []
+
+    
+    for(let i = 0; arr.length < 7; i++)
+    {
+        let random = Math.floor(Math.random() * 10)
+        
+        if(arr.indexOf(random) !== -1)
+        {
+            continue
+            
+        } else
+        {
+          arr.push(random)  
+        }
+    }
+    console.log(arr)
+}
+
+sevenRandomNumbers()
+
+/* [
+  5, 8, 7, 6,
+  4, 9, 2
+]
+*/
+
+
+
+
+
+
+const reverseArr = (countries) =>
+{
+    let arr2 = []
+    
+    for(let i = 0; i < countries.length; i++)
+    {
+        arr2.push(countries[i])
+    }
+   return arr2.reverse()
+}
+//20 Write a function called reverseCountries, 
+// it takes countries array and first it copy 
+// the array and returns the reverse of the original array
+const reverseArr = (countries) =>
+{
+    let arr2 = []
+    
+    for(let i = 0; i < countries.length; i++)
+    {
+        arr2.push(countries[i])
+    }
+   return arr2.reverse()
+}
+
+console.log(reverseArr([
+  "Philippines",
+  "Japan",
+  "Canada",
+  "Brazil",
+  "Germany",
+  "Australia",
+  "India",
+  "South Korea"
+]))
+
+
 
 
 
