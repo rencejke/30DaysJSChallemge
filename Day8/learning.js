@@ -348,6 +348,17 @@ console.log(entries)
 ]
 */
 
+//Checking properties using hasOwnProperty()
+
+//hasOwnProperty: To check if a specific key or property exist in an object
+
+console.log(copyPerson.hasOwnProperty('name'))
+console.log(copyPerson.hasOwnProperty('score'))
+
+
+
+
+
 
 
 
