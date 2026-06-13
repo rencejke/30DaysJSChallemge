@@ -232,9 +232,243 @@ for(let i = 0; i < usersKey.length; i++)
 console.log(usersWithMern) //[ 'Asab', 'Paul' ]
 
 
+//4. Set your name in the users object without modifying the original users object
+
+const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
+users.Clarence = {
+    email: 'bonillacj@gmail.com',
+    skills: ['HTML', 'CSS', 'JS', 'AI', 'Automation'],
+    age: 23,
+    isLoggedIn: true,
+    points: 69
+}
+console.log(users)
 
 
+//5 Get all keys or properties of users object
+const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
+users.Clarence = {
+    email: 'bonillacj@gmail.com',
+    skills: ['HTML', 'CSS', 'JS', 'AI', 'Automation'],
+    age: 23,
+    isLoggedIn: true,
+    points: 69
+}
+
+const properties = Object.keys(users)
+console.log(properties)
+
+/*
+[
+  'Alex',  'Asab',
+  'Brook', 'Daniel',
+  'John',  'Thomas',
+  'Paul',  'Clarence'
+]  */
+
+//6 Get all the values of users object
+
+const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
+users.Clarence = {
+    email: 'bonillacj@gmail.com',
+    skills: ['HTML', 'CSS', 'JS', 'AI', 'Automation'],
+    age: 23,
+    isLoggedIn: true,
+    points: 69
+}
+
+const properties = Object.values(users)
+console.log(properties) // show the values per key
 
 
+const countries = [
+  {
+    name: "Philippines",
+    capital: "Manila",
+    population: 117337368,
+    languages: ["Filipino", "English"]
+  },
+  {
+    name: "Japan",
+    capital: "Tokyo",
+    population: 123294513,
+    languages: ["Japanese"]
+  },
+  {
+    name: "Canada",
+    capital: "Ottawa",
+    population: 40126666,
+    languages: ["English", "French"]
+  },
+  {
+    name: "Germany",
+    capital: "Berlin",
+    population: 84552242,
+    languages: ["German"]
+  },
+  {
+    name: "India",
+    capital: "New Delhi",
+    population: 1438069596,
+    languages: ["Hindi", "English"]
+  }
+];
 
 
+for (let i = 0; i < countries.length; i++)
+{
+    console.log(countries[i].name)
+    console.log(countries[i].capital)
+    console.log(countries[i].population)
+    console.log(countries[i].languages)
+}

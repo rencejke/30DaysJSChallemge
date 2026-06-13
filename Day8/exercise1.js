@@ -35,4 +35,3 @@ dog.getDogInfo =  function()
 }
     
 console.log(dog.getDogInfo())
-
