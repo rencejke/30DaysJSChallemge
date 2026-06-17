@@ -115,6 +115,136 @@ const users = [
 //  b. Create a function called signIn which allows user to sign in to the application
 
 
+    const users = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt:'08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt:'08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt:'08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt:'08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt:'08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+    ];
+
+    const products = [
+  {
+    _id: 'eedfcf',
+    name: 'mobile phone',
+    description: 'Huawei Honor',
+    price: 200,
+    ratings: [
+      { userId: 'fg12cy', rate: 5 },
+      { userId: 'zwf8md', rate: 4.5 }
+    ],
+    likes: []
+  },
+  {
+    _id: 'aegfal',
+    name: 'Laptop',
+    description: 'MacPro: System Darwin',
+    price: 2500,
+    ratings: [],
+    likes: ['fg12cy']
+  },
+  {
+    _id: 'hedfcg',
+    name: 'TV',
+    description: 'Smart TV:Procaster',
+    price: 400,
+    ratings: [{ userId: 'fg12cy', rate: 5 }],
+    likes: ['fg12cy']
+  }
+]
+
+const signUp = () =>
+{
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+ 
+    const date = new Date()
+    const year = date.getFullYear()
+    const months = date.getMonth() + 1
+    const day = date.getDate()
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    let id = ''
+    const newUser = {}
+    
+    for(let i = 0; i < 6; i++)
+    {
+        const randomId = Math.floor(Math.random() * letters.length)
+        id+=letters[randomId]
+    }
+    
+    const username = prompt("Enter username");
+    const useremail = prompt("Enter email").toLowerCase();
+     
+     for(let i = 0; i < users.length; i++)
+     {
+         if(users[i].email === useremail)
+         {
+             return 'This user is already existed'
+         }
+     }
+    
+    const password = prompt("Enter password");
+    const serverDate = `${months}/${day}/${year} ${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}`;
+    const isLoggedIn = false;
+    
+    
+    newUser._id = id
+    newUser.username = username
+    newUser.email = useremail
+    newUser.password = password
+    newUser.createdAt = serverDate
+    newUser.isLoggedIn = isLoggedIn
+    
+    users.push(newUser)
+    
+    return users
+    
+}
+
+console.log(signUp()) 
+
+
+
+
+
+
+
+
 
 
 
