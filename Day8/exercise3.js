@@ -236,7 +236,48 @@ const signUp = () =>
     
 }
 
+const signIN = () =>
+{
+    const accEmail = prompt('Enter your email Address').toLowerCase()
+    
+
+         for(let i = 0; i < users.length; i++)
+         {
+              
+             if(users[i].email === accEmail)
+             {
+                const userPass =  prompt('Enter your password').toLowerCase()
+                
+                if(users[i].email === accEmail && users[i].password === userPass)
+                {
+                     return `Login Successfully`
+                } 
+                else
+                {
+                    return `Incorrect Password`
+                }
+                
+             }
+         }
+         
+         return 'Account does not exist'
+}
+
+console.log(signIN())
 console.log(signUp()) 
+
+
+//The products array has three elements 
+// and each of them has six properties. 
+// a. Create a function called rateProduct which rates the product 
+
+const rateProduct = () =>
+{
+    const userId = prompt('Enter your userid')
+    const productName = prompt('Enter your userid')
+}
+
+console.log(rateProduct())
 
 
 
