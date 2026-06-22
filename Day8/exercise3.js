@@ -273,10 +273,29 @@ console.log(signUp())
 
 const rateProduct = () =>
 {
-    const userId = prompt('Enter your userid')
+    const userRatings = {}
+    const userIdData = prompt('Enter your userid')
+    const userRate =  Number(prompt('Enter your rate'))
     const productName = prompt('Enter your userid')
+    
+    userRatings.userId = userIdData
+    userRatings.rate = userRate
+    
+    
+    for(let i = 0; i < products.length; i++)
+    {
+        if(products[i].name.toLowerCase() === productName.toLowerCase())
+        {
+           products[i].ratings.push(userRatings)
+           return products[i]
+        }
+        else
+        {
+            return 'that product is not available'
+        }
+    }
+    
 }
-
 console.log(rateProduct())
 
 
