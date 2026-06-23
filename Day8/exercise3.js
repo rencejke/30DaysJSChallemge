@@ -298,6 +298,35 @@ const rateProduct = () =>
 }
 console.log(rateProduct())
 
+//Create a function called likeProduct. 
+// This function will helps to like to the 
+// product if it is not liked and remove like if it was liked.
+
+
+const likeProduct = () =>
+{
+    const userId = prompt('Enter your username')
+    
+    for(let i = 0; i < products.length; i++)
+    {
+        const likeProduct = prompt(`Do you like this ${products[i].name}?`, 'Answer yes or no')
+        
+        if(likeProduct.toLowerCase() === 'yes')
+        {
+            products[i].likes.push(userId)
+        } else if (likeProduct.toLowerCase() === 'no')
+        {
+            return `test`
+        } else
+        {
+            return `Invalid response`
+        }
+    }
+    return products
+}
+
+console.log(likeProduct())
+
 
 
 
