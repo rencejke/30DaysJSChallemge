@@ -305,18 +305,25 @@ console.log(rateProduct())
 
 const likeProduct = () =>
 {
-    const userId = prompt('Enter your username')
+    const userId = prompt('Enter your userid')
     
     for(let i = 0; i < products.length; i++)
     {
-        const likeProduct = prompt(`Do you like this ${products[i].name}?`, 'Answer yes or no')
+        const userlikeProduct = prompt(`Do you like ${products[i].name}?`, 'Answer yes or no')
         
-        if(likeProduct.toLowerCase() === 'yes')
+        if(userlikeProduct.toLowerCase() === 'yes')
         {
-            products[i].likes.push(userId)
-        } else if (likeProduct.toLowerCase() === 'no')
+           if(products[i].likes.indexOf(userId) === -1)
+           {
+                products[i].likes.push(userId)
+           }
+        } 
+        else if (userlikeProduct.toLowerCase() === 'no')
         {
-            return `test`
+            if(products[i].likes.indexOf(userId) != -1)
+            {
+              products[i].likes.splice(products[i].likes.indexOf(userId), 1)
+            }
         } else
         {
             return `Invalid response`
