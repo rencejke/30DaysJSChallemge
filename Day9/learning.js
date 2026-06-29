@@ -144,5 +144,115 @@ function(num) {
  
 */
 
+let sum = 0;
+
+const numbers = [1,2,3,4,5]
+numbers.forEach(function(num)
+{
+    sum +=num
+})
+
+console.log(sum)
+
+
+//simplified version of the above code
+
+let sum = 0;
+const numbers = [1,2,3,4,5]
+numbers.forEach(num => sum +=num)
+console.log(sum) //15
+
+
+
+const countries = ['Finland', 'Denmark', 'Sweden', 'Norway', 'Iceland']
+countries.forEach(countriesUpperCase => console.log(countriesUpperCase.toUpperCase()))
+
+// FINLAND
+// DENMARK
+// SWEDEN
+// NORWAY
+// ICELAND
+
+
+//map
+
+/* map: Iterate an array elements and 
+modify the array elements. It takes a callback function with elements, index , 
+array parameter and return a new array.
+*/
+
+//syntax:
+const modifiedArray = arr.map(function (element, index, arr) {
+  return element
+})
+
+/*Arrow function and explicit return
+const modifiedArray = arr.map((element,index) => element);
+*/
+//Example
+const numbers = [1, 2, 3, 4, 5]
+const numbersSquare = numbers.map((num) => num * num)
+
+console.log(numbersSquare) //[ 1, 4, 9, 16, 25 ]
+
+
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const namesToUpperCase = names.map((nameUpp) => nameUpp.toUpperCase()) 
+
+console.log(namesToUpperCase) //[ 'ASABENEH', 'MATHIAS', 'ELIAS', 'BROOK' ]
+
+const countries = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya',
+]
+const countriesToUpperCase = countries.map((country) => country.toUpperCase())
+console.log(countriesToUpperCase)
+
+/*
+Arrow function
+const countriesToUpperCase = countries.map((country) => {
+  return country.toUpperCase();
+})
+  
+Explicit return arrow function
+const countriesToUpperCase = countries.map(country => country.toUpperCase());
+*/
+
+//['ALBANIA', 'BOLIVIA', 'CANADA', 'DENMARK', 'ETHIOPIA', 'FINLAND', 'GERMANY', 'HUNGARY', 'IRELAND', 'JAPAN', 'KENYA']
+
+
+const countriesFirstThreeLetters = countries.map((country) =>
+  country.toUpperCase().slice(0, 3)
+)
+
+// ["ALB", "BOL", "CAN", "DEN", "ETH", "FIN", "GER", "HUN", "IRE", "JAP", "KEN"]
+
+//filter
+
+//Filter: Filter out items which full fill filtering conditions and return a new array.
+
+//Filter countries containing land
+const countriesContainingLand = countries.filter((country) =>
+  country.includes('land')
+)
+console.log(countriesContainingLand) //['Finland', 'Ireland']
+
+const countriesEndsByia = countries.filter((country) => country.endsWith('ia'))
+console.log(countriesEndsByia) //['Albania', 'Bolivia','Ethiopia']
+
+
+
+
+
+
 
 
