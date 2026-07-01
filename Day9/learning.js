@@ -249,8 +249,165 @@ console.log(countriesContainingLand) //['Finland', 'Ireland']
 const countriesEndsByia = countries.filter((country) => country.endsWith('ia'))
 console.log(countriesEndsByia) //['Albania', 'Bolivia','Ethiopia']
 
+const countriesHaveFiveLetters = countries.filter(
+  (country) => country.length === 5
+)
+console.log(countriesHaveFiveLetters) //[ 'Japan', 'Kenya' ]
 
 
+const scoresGreaterEighty = scores.filter((score) => score.score > 80)
+console.log(scoresGreaterEighty)
+
+//[{name: 'Asabeneh', score: 95}, { name: 'Lidiya', score: 98 },{name: 'Martha', score: 85},{name: 'John', score: 100}]
+
+
+const scores = [
+  { name: 'Asabeneh', score: 95 },
+   { name: 'Lidiya', score: 98 },
+  { name: 'Mathias', score: 80 },
+  { name: 'Elias', score: 50 },
+  { name: 'Martha', score: 85 },
+  { name: 'John', score: 100 },
+]
+
+const scoresGreaterEighty = scores.filter((score) => score.score > 80)
+console.log(scoresGreaterEighty)
+
+//[{name: 'Asabeneh', score: 95}, { name: 'Lidiya', score: 98 },{name: 'Martha', score: 85},{name: 'John', score: 100}]
+
+//reduce
+
+/* reduce: Reduce takes a callback function. 
+The call back function takes accumulator, current, 
+and optional initial value as a parameter and returns a
+single value. It is a good practice to define an initial
+value for the accumulator value. If we do not specify this parameter,
+by default accumulator will get array first value. If our array is an empty array,
+then Javascript will throw an error.
+*/
+arr.reduce((acc, cur) => {
+  // some operations goes here before returning a value
+ return 
+}, initialValue)
+
+const numbers = [1, 2, 3, 4, 5]
+const sum = numbers.reduce((acc, cur) => acc + cur, 0)
+
+console.log(sum) //15
+
+//every
+
+/* every: Check if all the elements are
+similar in one aspect. It returns boolean
+*/
+
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'] // Are all strings?
+const areAllStr = names.every((name) => typeof name === 'string') //true
+
+//or
+
+const areAllStr = names.every(function(name)
+{
+    typeof name === 'string'
+    
+    return name
+}) //true
+
+console.log(areAllStr)
+
+const bools = [true, true, true, true]
+const areAllTrue = bools.every((b) => b === true) // Are all true? 
+
+console.log(areAllTrue) // true
+
+
+//find
+//ind: Return the first element which satisfies the condition
+
+const ages = [24, 22, 25, 32, 35, 18]
+const age = ages.find((age) => age < 20)
+
+console.log(age) //18
+
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const result = names.find((name) => name.length > 7)
+console.log(result) //Asabeneh
+
+const scores = [
+  { name: 'Asabeneh', score: 95 },
+  { name: 'Mathias', score: 80 },
+  { name: 'Elias', score: 50 },
+  { name: 'Martha', score: 85 },
+  { name: 'John', score: 100 },
+]
+
+const score = scores.find((user) => user.score > 80)
+console.log(score) //{ name: 'Asabeneh', score: 95 }
+
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const ages = [24, 22, 25, 32, 35, 18]
+
+//findIndex
+//findIndex: Return the position of the first element which satisfies the condition
+
+const result = names.findIndex((name) => name.length > 7)
+console.log(result) // 0
+
+const age = ages.findIndex((age) => age < 20)
+console.log(age) // 5
+
+
+//some
+//some: Check if some of the elements are similar in one aspect. It returns boolean
+
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const bools = [true, true, true, true]
+
+const areSomeTrue = bools.some((b) =>  b === true)
+
+console.log(areSomeTrue) //true
+
+const areAllStr = names.some((name) => typeof name === 'number') // Are all strings ?
+console.log(areAllStr) // false
+
+//sort
+/* sort: The sort methods arranges the array elements
+ either ascending or descending order. By default, the sort()
+  method sorts values as strings.This works well for string array 
+  items but not for numbers. If number values are sorted as strings
+   and it give us wrong result. Sort method modify the original array.
+    It is recommended to copy the original data before you start using sort method.
+*/
+
+const products = ['Milk', 'Coffee', 'Sugar', 'Honey', 'Apple', 'Carrot']
+console.log(products.sort()) // ['Apple', 'Carrot', 'Coffee', 'Honey', 'Milk', 'Sugar']
+//Now the original products array  is also sorted
+
+// /Sorting Numeric values
+
+/* 
+ By default, sort() treats numbers as strings,
+ not numeric values. That's why 100 can appear before 2—it 
+ compares the first characters ("1" comes before "2"). To sort 
+ numbers correctly, pass a compare callback function to sort().
+  The callback returns a negative, zero, or positive value to tell JavaScript how to order the numbers.
+
+*/
+
+const numbers = [9.81, 3.14, 100, 37]
+// Using sort method to sort number items provide a wrong result. see below
+
+console.log(numbers.sort()) //[100, 3.14, 37, 9.81]
+
+numbers.sort(function (a, b) {
+  return a - b
+})
+
+//or
+
+const sortNumber = numbers.sort((a,b) => a-b)
+
+console.log(numbers) //[ 3.14, 9.81, 37, 100 ]
 
 
 
