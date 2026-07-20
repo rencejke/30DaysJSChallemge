@@ -295,6 +295,10 @@ const sum = numbers.reduce((acc, cur) => acc + cur, 0)
 
 console.log(sum) //15
 
+//acc → starts at 0
+
+//cur → each number in the array
+
 //every
 
 /* every: Check if all the elements are
@@ -408,6 +412,51 @@ numbers.sort(function (a, b) {
 const sortNumber = numbers.sort((a,b) => a-b)
 
 console.log(numbers) //[ 3.14, 9.81, 37, 100 ]
+
+
+//sorting object arrays
+
+//Whenever we sort objects in an array, we use the object key to compare. Let us see the example below.
+
+objArr.sort(function (a, b) {
+  if (a.key < b.key) return -1
+  if (a.key > b.key) return 1
+  return 0
+})
+
+// or
+
+objArr.sort(function (a, b) {
+  if (a['key'] < b['key']) return -1
+  if (a['key'] > b['key']) return 1
+  return 0
+})
+
+const users = [
+  { name: 'Asabeneh', age: 150 },
+  { name: 'Brook', age: 50 },
+  { name: 'Eyob', age: 100 },
+  { name: 'Elias', age: 22 },
+]
+
+users.sort((a, b)=>{
+    if(a.age < b.age) return -1
+    if(a.age > b.age) return 1
+    return 0
+})
+
+console.log(users)
+
+/* 
+
+[
+  { name: 'Elias', age: 22 },
+  { name: 'Brook', age: 50 },
+  { name: 'Eyob', age: 100 },
+  { name: 'Asabeneh', age: 150 }
+]
+
+*/
 
 
 
