@@ -86,6 +86,81 @@ const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
 const namesToUpperCaese = names.map(name => name.toUpperCase())
 console.log(namesToUpperCaese)
 
+//10 Use map to map the products array to its corresponding prices.
+
+const products = [
+  { product: 'banana', price: 3 },
+  { product: 'mango', price: 6 },
+  { product: 'potato', price: ' ' },
+  { product: 'avocado', price: 8 },
+  { product: 'coffee', price: 10 },
+  { product: 'tea', price: '' },
+]
+
+
+const productPrices = products.map(product => product['price'])
+console.log(productPrices)
+
+
+//11 Use filter to filter out countries containing land.
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const countryWithLand = countries.filter(country => country.includes('land'))
+console.log(countryWithLand)
+
+//12 Use filter to filter out countries having six character.
+
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const countryWithSixCharacter = countries.filter(country => country.length === 6)
+console.log(countryWithSixCharacter)
+
+//13 Use filter to filter out countries containing six letters and more in the country array.
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const countryWithSixCharacterAndMore = countries.filter(country => country.length >= 6)
+console.log(countryWithSixCharacterAndMore)
+
+
+//14 //Use filter to filter out country start with 'E';
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const countryStartWithLetterE = countries.filter(country => country[0].toLowerCase() === 'e')
+console.log(countryStartWithLetterE)
+
+
+//15 Use filter to filter out only prices with values.
+const products = [
+  { product: 'banana', price: 3 },
+  { product: 'mango', price: 6 },
+  { product: 'potato', price: ' ' },
+  { product: 'avocado', price: 8 },
+  { product: 'coffee', price: 10 },
+  { product: 'tea', price: '' },
+]
+
+const productsWithValue = products.filter(product => product['price'].toString().trim('').length !== 0)
+console.log(productsWithValue)
+
+//16 Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+
+const getStringLists = (arr) =>
+{
+    const getData = arr.filter(arrData => (typeof arrData === 'string'))
+    
+    return getData
+}
+
+const data = [
+  "apple",
+  25,
+  "banana",
+  100,
+  "orange",
+  0,
+  "grape",
+  -5
+];
+
+console.log(getStringLists(data))
+
+
 
 
 
