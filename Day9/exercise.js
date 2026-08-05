@@ -160,7 +160,47 @@ const data = [
 
 console.log(getStringLists(data))
 
+//17 Use reduce to sum all the numbers in the numbers array.
+const numbers = [3, 7, 12, 5, 18, 1, 9, 20];
+const numbersSum = numbers.reduce((acc, curr) => acc + curr, 0)
+console.log(numbersSum)
 
+//18 Use reduce to concatenate all the countries and
+//  to produce this sentence: Estonia, Finland, Sweden, Denmark,
+//  Norway, and IceLand are north European countries
 
+const countries = [ 'Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const countriesConCat = countries.reduce((acc, curr, index) => 
+{
+    //this gets the last index of the array
+    if(index === countries.length - 1)
+    {
+        return  acc + ", and " + curr + " are north european countries"
+    }
+    
+    //Estonia, Finland, Sweden, Denmark, Norway
+    return acc + ", " + curr
+})
+console.log(countriesConCat)
 
+//19 Explain the difference between some and every
+// some() checks if at least one element satisfies a condition.
+// It returns true if one or more elements match; otherwise, false.
+
+// every() checks if all elements satisfy a condition.
+// It returns true only if every element matches; otherwise, false.
+
+//20 Use some to check if some names' length greater than seven in names array
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const checkSomeLength = names.some(name => name.length > 7)
+console.log(checkSomeLength)
+
+//21 Use every to check if all the countries contain the word land
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const checkCountryLand = countries.every(country => country.includes('land'))
+console.log(checkCountryLand)
+
+//22 Explain the difference between find and findIndex.
+// find() returns the first element that satisfies the condition.
+// findIndex() returns the index (position) of the first element that satisfies the condition.
 
