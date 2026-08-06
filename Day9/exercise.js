@@ -204,3 +204,26 @@ console.log(checkCountryLand)
 // find() returns the first element that satisfies the condition.
 // findIndex() returns the index (position) of the first element that satisfies the condition.
 
+
+//23 Use find to find the first country containing only six letters in the countries array
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const sixChrcterCntry = countries.find(country => country.length === 6)
+console.log(sixChrcterCntry) //Sweden
+
+//24 Use findIndex to find the position of the first country containing only six letters in the countries array
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const firstSixChrcterCntryPstn = countries.findIndex(country => country.length === 6)
+console.log(firstSixChrcterCntryPstn) //1
+
+//25 Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const checkPstnNorway = countries.findIndex(country => country === 'Norway')
+console.log(checkPstnNorway) //3
+
+//26 Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const checkPstnRussia = countries.findIndex(country => country === 'Russia')
+console.log(checkPstnRussia) //-1
+
+
+
