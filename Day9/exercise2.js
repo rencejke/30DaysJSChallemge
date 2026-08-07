@@ -38,3 +38,41 @@ const totalPriceProduct2 = products.reduce((acc, curr) =>
 }, 0)
 console.log(totalPriceProduct2)
 
+
+//3 Declare a function called categorizeCountries which returns an array of
+//  countries which have some 
+// common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+
+import { countries } from './countries.js';
+
+const categorizeCountries = (filter) =>
+{
+    const getFilteredCountry = countries.filter(country => country.toLowerCase().includes(filter))
+    
+    return getFilteredCountry
+
+  // or 
+    // for much shorter
+   // return countries.filter(country => country.toLowerCase().includes(filter))
+}
+console.log(categorizeCountries('land')) //[ 'IceLand', 'Finland' ]
+
+
+//explicit version
+const categorizeCountries = arr =>  
+  countries.filter(country => 
+    country.toLowerCase().includes(arr.toLowerCase())
+    )
+    
+//4
+
+const countNumberStarted = arr => 
+arr.map(country => country[0]).reduce((acc, curr, index) =>
+{
+   //not yet done
+}, 0)
+    
+    
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+console.log(countNumberStarted(countries))
+    
