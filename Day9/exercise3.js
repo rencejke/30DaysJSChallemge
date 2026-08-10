@@ -2954,6 +2954,61 @@ arr.map(entry => ({
 })
 .slice(0, limit)
 
+
+
+//cleaner version of number 2
+
+const mostSpokenLanguages = (arr, limit) =>
+arr.reduce((acc, curr) =>
+{
+    //collect all languages from every country and push it into an array
+    curr['languages'].forEach(language =>
+    {
+        acc.push(language)
+    })
+
+    return acc
+
+}, []) 
+.reduce((acc, curr) =>
+{
+   let found = false; // flags whether the language already exists
+   
+   //check if the language already exists; if found, increase its count
+   acc.forEach(checkArray =>
+   {
+       if(checkArray[0] === curr)
+       {
+           //[language, count+1]
+           checkArray[1] +=1
+           found = true;
+       }
+   })
+   
+   if(found === false)
+   {
+       //[language, count]
+       acc.push([curr, 1])
+   }
+
+return acc
+
+}, []) //transform array into an object
+.map(entry =>(
+    {
+         language: entry[0],
+         count: entry[1]
+}))
+.sort((a, b) =>
+{
+    // highest to lowest
+    if(a.count < b.count) return 1
+    if(a.count > b.count) return -1
+
+    return 0
+})
+.slice(0, limit) //keep only the top 'limit' results
+
 console.log(mostSpokenLanguages(countries, 10))
 
 /* 
@@ -2973,4 +3028,36 @@ console.log(mostSpokenLanguages(countries, 10))
 
 */
 
+//3 Use countries_data.js file create a function which create the ten most populated countries
+const mostPopulatedCountries = (arrParam, limit) =>
+arrParam.reduce((acc, curr) =>
+{
+    let arr = []
+    arr.push(curr['name'])
+    arr.push(curr['population'])
+    
+    acc.push(arr)
+    return acc
+    
+}, []).map(entry => ({
+    country: entry[0],
+    population: entry[1]
+})).sort((a, b) =>
+{
+    if(a.population < b.population) return 1
+    if(a.population > b.population) return -1
+    return 0
+}).slice(0, limit)
 
+console.log(mostPopulatedCountries(countries_data, 5))
+
+/*
+[
+  { country: 'China', population: 1402112000 },
+  { country: 'India', population: 1380004385 },
+  { country: 'United States of America', population: 329484123 },
+  { country: 'Indonesia', population: 273523621 },
+  { country: 'Pakistan', population: 220892331 }
+]
+
+*/
