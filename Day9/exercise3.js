@@ -3061,3 +3061,94 @@ console.log(mostPopulatedCountries(countries_data, 5))
 ]
 
 */
+
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+
+const statistics = {
+    count: function()
+    {
+       return ages.length
+    },
+    sum: function()
+    {
+       return ages.reduce((acc, curr) => acc + curr)
+    },
+    min: function()
+    {
+       
+         // I didn't add an initial value to reduce(),
+        // so the first element of the array becomes the initial acc.
+        // acc = 31 and curr = 26
+
+       return ages.reduce((acc, curr) =>
+        {
+            // 26 <= 31 → true
+            //26 <= 34 → false (return the current acc which is 26)
+            if(curr <= acc)
+            {
+                 return curr // curr (26) becomes the new acc
+            }else
+            {   
+                
+                return acc // keep the current minimum
+            }
+           
+        })
+
+        //whatever i return from the reducer it becomes acc for the next iteration
+    },
+     max: function()
+    {
+       
+         // I didn't add an initial value to reduce(),
+        // so the first element of the array becomes the initial acc.
+        // acc = 31 and curr = 26
+
+       return ages.reduce((acc, curr) =>
+        {
+            // 26 >= 31 → false
+            if(curr >= acc)
+            {
+                 return curr 
+            }else
+            {   
+                
+                return acc // keep the current maximum value
+            }
+           
+        })
+
+        //whatever i return from the reducer it becomes acc for the next iteration
+    },
+    range: function()
+    {
+        return statistics.max() - statistics.min() 
+    },
+    mean: function()
+    {
+        return statistics.sum() / statistics.count()
+    },
+    median: function()
+    {
+        // Sort the ages from smallest to largest
+        // Find the middle index
+        // count = 25 -> floor(25 / 2) = 12.5 -> 12
+        // ages[12] is the median
+        return ages.sort((a, b) => a -b)[Math.floor(statistics.count() / 2)]
+        
+    }
+
+}
+
+console.log(statistics.sum())
+console.log(statistics.count())
+console.log(statistics.min())
+console.log(statistics.max())
+console.log(statistics.range())
+console.log(statistics.mean())
+console.log(statistics.median())  //not yet done
+
+
+
+
+
