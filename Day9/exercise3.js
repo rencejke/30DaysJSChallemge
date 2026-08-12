@@ -3112,13 +3112,10 @@ const statistics = {
                  return curr 
             }else
             {   
-                
                 return acc // keep the current maximum value
             }
            
         })
-
-        //whatever i return from the reducer it becomes acc for the next iteration
     },
     range: function()
     {
@@ -3136,17 +3133,82 @@ const statistics = {
         // ages[12] is the median
         return ages.sort((a, b) => a -b)[Math.floor(statistics.count() / 2)]
         
+    },
+    mode: function()
+    {
+        //sort ages from smallest to largest
+        return ages.sort((a, b) => a - b).reduce((acc, curr) => 
+        {
+
+             //flag all initially as false
+             //this acts like a checker if the age is already in the array
+            let found = false;
+
+            acc.forEach(checkAge => 
+            {
+                //if the age already exists, increase its count by 1
+                //[age. count+1]
+                if(checkAge[0] === curr)
+                {
+                    checkAge[1] +=1
+                    found = true;
+                }
+            })
+
+            // If the age doesn't exist yet, add it with a count of 1.
+            // [age, count]
+            if(found === false)
+            {
+                acc.push([curr, 1])
+            }
+            
+            return acc
+
+        }, []).map(entry => ( 
+             // Transform [age, count] into [{ mode, count }]
+            {
+                'mode': entry[0],
+                'count': entry[1]
+            }
+        )).sort((a, b) =>  
+        {
+            //arrange from highest count to lowest count
+
+            if(a.count < b.count) return 1
+            if(a.count > b.count) return -1 
+            
+            return 0
+        }).slice(0, 1)[0] //limit into 1 and get the first object
+    },
+    
+    variance: function()
+    {
+        return ages.reduce((acc, curr) => 
+        {
+
+              // subtract eagh age to mean
+             // squared each result
+            // add each squared difference to the accumulator
+           // divide each squared difference by the count
+
+           let variance = Math.pow(curr  - statistics.mean(), 2)
+           return acc + variance / statistics.count()
+
+        }, 0)
+     
     }
 
 }
 
-console.log(statistics.sum())
-console.log(statistics.count())
-console.log(statistics.min())
-console.log(statistics.max())
-console.log(statistics.range())
-console.log(statistics.mean())
-console.log(statistics.median())  //not yet done
+// console.log(statistics.sum())
+// console.log(statistics.count())
+// console.log(statistics.min())
+// console.log(statistics.max())
+// console.log(statistics.range())
+// console.log(statistics.mean())
+// console.log(statistics.median()) 
+console.log(statistics.variance()) // not yet done
+
 
 
 
