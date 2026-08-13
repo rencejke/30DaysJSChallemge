@@ -3200,8 +3200,59 @@ const statistics = {
     std: function()
     {
        return  Math.sqrt(statistics.variance())
-    }    
+    }, 
+    freqDist: function()
+    {
+        return ages.reduce((acc, curr) =>
+        {
+            let found = false
 
+            acc.forEach(count =>
+            {
+
+                if(count[1] === curr)
+                {
+                    count[0] +=1
+                    found = true
+                }
+            })
+
+            if(found === false)
+            {
+                acc.push([1, curr])
+            }
+            
+            return acc
+
+        }, []).reduce((acc, curr) =>
+        {
+                // No need for forEach here because curr is already 
+                // one [count, age] pair from the first reduce.
+
+                // [5, 26] = [count, age]
+
+                // Convert the count into a percentage:
+                // [5 / 25 * 100, 26]
+                // [20, 26]
+
+            acc.push([(curr[0] / statistics.count()) * 100, curr[1]])
+            return acc
+
+        }, [])
+    },
+    describe: function()
+    {  
+       return `Count: ${statistics.count()}` + '\n' +  
+       `Sum: ${statistics.sum()}` + '\n' + 
+       `Min: ${statistics.min()} ` + '\n' + 
+       `Max: ${ statistics.max()}` + '\n' + 
+       `Range: ${statistics.range()}`  + '\n'  + 
+       'Mode: (' + statistics.mode().mode + ', ' + statistics.mode().count + ')'  + '\n'  +
+       `Variance: ${ statistics.variance()}` + '\n' + 
+        `Standard Deviation:  ${statistics.std()}` + '\n' + 
+        'Frequency Distribution: ['  + statistics.freqDist().map(entry => '(' + entry[0] + ', ' + entry[1] + ')' ).join(', ') + ']'
+       
+    }
 }
 
 // console.log(statistics.sum())
@@ -3211,9 +3262,20 @@ const statistics = {
 // console.log(statistics.range())
 // console.log(statistics.mean())
 // console.log(statistics.median()) 
-console.log(statistics.variance()) // not yet done
+console.log(statistics.describe()) 
 
 
+/*
+Count: 25
+Sum: 744
+Min: 24 
+Max:  38
+Range: 14
+Mode: (26, 5)
+Variance: 17.5424
+Standard Deviation:  4.188364836066696
+Frequency Distribution: [(8, 24), (4, 25), (20, 26), (16, 27), (4, 29), (8, 31), (12, 32), (8, 33), (8, 34), (8, 37), (4, 38)]
+*/
 
 
 

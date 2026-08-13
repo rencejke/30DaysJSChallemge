@@ -1,0 +1,15 @@
+//REMEMBER
+
+//What do I want as my result?
+
+// I want to...
+//                 ↓
+// DO something to every item → forEach
+// TRANSFORM every item       → map
+// KEEP some items            → filter
+// COMBINE into a result      → reduce
+// CHECK ALL                  → every
+// CHECK AT LEAST ONE         → some
+// GET FIRST MATCH            → find
+// GET FIRST MATCH'S INDEX    → findIndex
+// ORDER the items            → sort
