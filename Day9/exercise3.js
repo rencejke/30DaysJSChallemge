@@ -3196,7 +3196,11 @@ const statistics = {
 
         }, 0)
      
-    }
+    }, 
+    std: function()
+    {
+       return  Math.sqrt(statistics.variance())
+    }    
 
 }
 
