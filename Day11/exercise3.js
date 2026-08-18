@@ -56,5 +56,88 @@ console.log(convertArrayToObject(students))
 ]
  */ 
 
+//4 Copy the student object to newStudent without mutating the original object.
+// In the new object add the following ?
+
+    const student = {
+      name: 'David',
+      age: 25,
+      skills: {
+        frontEnd: [
+          { skill: 'HTML', level: 10 },
+          { skill: 'CSS', level: 8 },
+          { skill: 'JS', level: 8 },
+          { skill: 'React', level: 9 }
+        ],
+        backEnd: [
+          { skill: 'Node',level: 7 },
+          { skill: 'GraphQL', level: 8 },
+        ],
+        dataBase:[
+          { skill: 'MongoDB', level: 7.5 },
+        ],
+        dataScience:['Python', 'R', 'D3.js']
+      }
+    }
+
+const newStudent =  {...student, 
+skills:
+    {...student.skills, 
+    frontEnd:[...student.skills.frontEnd],
+    backEnd:[...student.skills.backEnd],
+    dataBase:[...student.skills.dataBase],
+    dataScience:[...student.skills.dataScience]
+}}
+
+newStudent.skills.frontEnd.push({skill: 'BootStrap', level: 8})
+newStudent.skills.backEnd.push({skill: 'Express ', level: 9})
+newStudent.skills.dataBase.push({skill: 'SQL', level: 8})
+newStudent.skills.dataScience.push('SQL')
+
+//console.dir(newStudent, { depth: null }) 
+//Inspect this object with no limit
+//shows detailed data of objects
+
+/*
+
+{
+  name: 'David',
+  age: 25,
+  skills: {
+    frontEnd: [
+      { skill: 'HTML', level: 10 },
+      { skill: 'CSS', level: 8 },
+      { skill: 'JS', level: 8 },
+      { skill: 'React', level: 9 },
+      { skill: 'BootStrap', level: 8 }
+    ],
+    backEnd: [
+      { skill: 'Node', level: 7 },
+      { skill: 'GraphQL', level: 8 },
+      { skill: 'Express ', level: 9 }
+    ],
+    dataBase: [ { skill: 'MongoDB', level: 7.5 }, { skill: 'SQL', level: 8 } ],
+    dataScience: [ 'Python', 'R', 'D3.js', 'SQL' ]
+  }
+}
+
+*/
+
+console.log(newStudent) 
+
+/*{
+  name: 'David',
+  age: 25,
+  skills: {
+    frontEnd: [ [Object], [Object], [Object], [Object], [Object] ],
+    backEnd: [ [Object], [Object], [Object] ],
+    dataBase: [ [Object], [Object] ],
+    dataScience: [ 'Python', 'R', 'D3.js', 'SQL' ]
+  }
+}
+*/
+
+
+
 
 
