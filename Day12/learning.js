@@ -242,6 +242,19 @@ const matches = txt.match(pattern)
 console.log(matches) //["and banana are fruits"]
 
 
+//Zero or one times(?)
+
+const txt = 'I am not sure if there is a convention how to write the word e-mail.\
+Some people write it email others may write it as Email or E-mail.'
+
+const pattern = /[Ee]-?mail/g 
+const matches = txt.match(pattern)
+
+console.log(matches) //[ 'e-mail', 'email', 'Email', 'E-mail' ]
+
+
+
+
 
 
 
