@@ -241,16 +241,89 @@ const txt = 'Apple and banana are fruits'
 const matches = txt.match(pattern)
 console.log(matches) //["and banana are fruits"]
 
-
 //Zero or one times(?)
 
 const txt = 'I am not sure if there is a convention how to write the word e-mail.\
 Some people write it email others may write it as Email or E-mail.'
 
-const pattern = /[Ee]-?mail/g 
+const pattern = /[Ee]-?mail/g //? makes - optional (without ? it shows [ 'e-mail', 'E-mail' ])
 const matches = txt.match(pattern)
 
 console.log(matches) //[ 'e-mail', 'email', 'Email', 'E-mail' ]
+
+//Quantifier in RegExp
+
+// We can specify the length of the substring we look for in a text, using a curly bracket. Let us see, how ot use RegExp quantifiers.
+// Imagine, we are interested in substring that their length are 4 characters
+
+
+const txt = 'This regular expression example was made in December 6,  2019.'
+const pattern =  /\b\w{4}\b/g
+const matches = txt.match(pattern)
+
+// \b      → word boundary
+// \w      → word character (letter, number, or _)
+// {4}     → exactly 4 characters
+// \b      → word boundary
+// g       → find all matches
+
+console.log(matches) //[ 'This', 'made', '2019' ]
+
+const txt = 'This regular expression example was made in December 6,  2019.'
+const pattern = /\b[a-zA-Z]{4}\b/g  //  exactly four character  words without numbers
+const matches = txt.match(pattern)
+console.log(matches)  //['This', 'made']
+
+const txt = 'This regular expression example was made in December 6,  2019.'
+const pattern = /\d{4}/g  // a number and exactly four digits
+const matches = txt.match(pattern)
+console.log(matches)  // ['2019']
+
+const txt = 'This regular expression example was made in December 6,  2019.'
+const pattern = /\d{1,4}/g   // 1 to 4
+const matches = txt.match(pattern)
+console.log(matches)  // ['6', '2019']
+
+//Cart ^
+//-> Starts with
+
+//Cart ^
+//-> Starts with
+
+const txt = 'This regular expression example was made in December 6,  2019.'
+const pattern = /^This/g
+const matches = txt.match(pattern)
+
+console.log(matches) //[ 'This' ]
+
+const txt = 'This regular expression example was made in December 6,  2019.'
+const pattern = /[^A-Za-z,. ]+/g // ^ in set character means negation, not A to Z, not a to z, no space, no comma no period
+const matches = txt.match(pattern)
+console.log(matches)  // ["6", "2019"]
+
+
+let pattern = /^[A-Z][a-z]{3,12}$/
+let name = 'Clarence'
+let result = pattern.test(name)
+
+/*
+
+^          → start of string
+[A-Z]      → exactly 1 uppercase letter
+[a-z]      → lowercase letters
+{3,12}     → 3 to 12 lowercase letters
+$          → end of string
+
+*/
+
+console.log(result) //true
+
+
+
+
+
+
+
 
 
 
