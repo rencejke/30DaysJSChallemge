@@ -39,8 +39,23 @@ class Statistics{
         return sortedAgeAsc[Math.floor(this.count() / 2)]
     }
     mode(){
-        const sortedAgeAsc = this.age.sort((a, b) =>  a - b)
-        return sortedAgeAsc[Math.floor(this.count() / 2)]
+        const setsAge = new Set(this.age)
+        
+        let count = []
+        for (const ages of setsAge) {
+             const filterAge = this.age.filter(filAge => filAge === ages)
+             count.push({Mode: ages, count: filterAge.length})
+
+        }
+
+        let finalOutput = count.sort((a, b) => {
+            if(a.count > b.count) return -1
+            if(b.count < a.count) return  1
+            else 0
+        })[0]
+
+        return finalOutput
+
     }
 
 }
@@ -52,3 +67,15 @@ console.log(stats.min())
 console.log(stats.max())
 console.log(stats.mean())
 console.log(stats.median())
+console.log(stats.mode())
+
+
+
+
+
+
+
+
+
+
+
