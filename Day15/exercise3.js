@@ -55,26 +55,64 @@ class Statistics{
         })[0]
 
         return finalOutput
+    }
+    variance(){
+        return this.age.reduce((acc, curr) =>
+        {
+
+              // subtract eagh age to mean
+              // squared each result
+             // add each squared difference to the accumulator
+            // divide each squared difference by the count
+
+            const variance = Math.pow(curr - this.mean(), 2)
+            return acc + variance / this.count()
+
+        }, 0)        
+    }
+    standardDeviaiton(){
+        return Math.sqrt(this.variance())
+    }
+     frequencyDistribution()
+    {
+            const setsAge = new Set(this.age)
+        
+        let count = []
+        for (const ages of setsAge) {
+             const filterAge = this.age.filter(filAge => filAge === ages)
+             count.push('(' + (filterAge.length / this.count() * 100).toFixed(1) + ', '  + ages + ')')
+        }
+
+        return count
+    }
+    describe(){
+        
+        return `Count: ${this.count()}` + '\n' + 
+        `Sum: ${this.sum()}` + '\n' + 
+        `Min: ${this.min()}` + '\n' +
+        `Max: ${this.max()}` + '\n' +
+        `Range: ${this.range()}` + '\n' +
+        `Mean: ${this.mean()}` + '\n' +
+        `Median: ${this.median()}` + '\n' +
+        `Mode: ${'(' + this.mode().Mode + ', ' + this.mode().count + ')'}` + '\n' + 
+        `Variance: ${this.variance()}` + '\n' +
+        `Standard Deviation: ${this.variance()}` + '\n' +
+        `Frequency Distribution: ${'[' + this.frequencyDistribution().map((format) => format)  + ']'}` 
 
     }
-
 }
 
 const stats = new Statistics([31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26])
-console.log(stats.count())
-console.log(stats.sum())
-console.log(stats.min())
-console.log(stats.max())
-console.log(stats.mean())
-console.log(stats.median())
-console.log(stats.mode())
-
-
-
-
-
-
-
+// console.log(stats.count())
+// console.log(stats.sum())
+// console.log(stats.min())
+// console.log(stats.max())
+// console.log(stats.mean())
+// console.log(stats.median())
+//console.log(stats.mode())
+// console.log(stats.variance())
+// console.log(stats.standardDeviaiton())
+console.log(stats.describe())
 
 
 
