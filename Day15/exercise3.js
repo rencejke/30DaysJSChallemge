@@ -114,6 +114,68 @@ const stats = new Statistics([31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32
 // console.log(stats.standardDeviaiton())
 console.log(stats.describe())
 
+//2
+class PersonAccount{
+    constructor(firstname, lastname, incomes, expenses){
+    
+    this.firstname = firstname
+    this.lastname = lastname
+    this.incomes = incomes
+    this.expenses = expenses
+}
+totalIncome(){
+    return this.incomes.reduce((acc, curr) => 
+    {
+        return acc+=curr.amount
+
+    }, 0) 
+}
+totalExpense(){
+  return this.expenses.reduce((acc, curr) => 
+    {
+        return acc+=curr.amount
+
+    }, 0) 
+}
+addIncome(type, amount){
+
+    this.incomes.push({type, amount})
+
+    //return this.incomes
+}
+addExpense(type, amount){
+
+    this.expenses.push({type, amount})
+
+    //return this.expenses
+}
+accountBalance(){
+    return this.totalIncome() - this.totalExpense()
+}
+accountInfo(){
+   return `Account Name: ${this.firstname} ${this.lastname}` + '\n' +
+   `Total Income: ${this.totalIncome()}` + '\n' +
+   `Total Expense: ${this.totalExpense()}` + '\n' +
+   `Account Balance: ${this.accountBalance()}`
+}
+}
+
+const person = new PersonAccount('Clarence Jake', 'Bonilla', [{type: 'Job', amount: 20000}],
+[{type: 'food', amount: 4000}])
+
+person.addIncome('Overtime', 10000)
+person.addExpense('Concert', 16530)
+console.log(person.accountInfo())
+
+/*
+
+Account Name: Clarence Jake Bonilla
+Total Income: 30000
+Total Expense: 20530
+Account Balance: 9470
+
+*/
+
 
 
 
