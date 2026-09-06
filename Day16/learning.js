@@ -152,7 +152,6 @@ const usersObj = JSON.parse(usersText, (key, value) => {
 console.log(usersObj)
 
 /*
-
 {
   users: [
     {
@@ -175,4 +174,6 @@ console.log(usersObj)
     }
   ]
 }
+  
 */
+
