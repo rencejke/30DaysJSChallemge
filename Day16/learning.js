@@ -177,3 +177,125 @@ console.log(usersObj)
   
 */
 
+/* Converting Object to JSON
+
+We use JSON.stringify() to convert a JavaScript object into JSON.
+
+It has 1 required parameter and 2 optional parameters:
+
+-replacer → filters which properties to include
+-space → adds indentation to make the JSON easier to read
+-Use undefined for the replacer if you don't want to filter anything.
+
+JSON.stringify(obj, replacer, space)
+// json or text , the data
+// reviver is an optional callback function
+
+*/
+
+const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Redux',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node'
+    ],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node'
+    ],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
+
+const txt = JSON.stringify(users, undefined, 4)
+console.log(txt) 
+
+// text means JSON- because json is a string form of an object.
+//convert object to json with 4 indentions for easier reading
+//undefined for the replacer because i dont want to filter anything.
+
+
+/*
+Using a Filter Array with JSON.stringify()
+
+-The replacer can be an array used to choose which properties to keep.
+
+-Simply put the keys you want to keep in an array and pass that array as the replacer.
+
+ex: JSON.stringify(user, ['name', 'age', 'country'])
+
+This will include only name, age, and country in the JSON output.
+
+
+*/
+
+
+const user = {
+  firstName: 'Asabeneh',
+  lastName: 'Yetayeh',
+  country: 'Finland',
+  city: 'Helsinki',
+  email: 'alex@alex.com',
+  skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Python'],
+  age: 250,
+  isLoggedIn: false,
+  points: 30
+}
+
+const txt = JSON.stringify(user, ['firstName', 'lastName', 'country', 'city', 'age'], 4)
+console.log(txt)
