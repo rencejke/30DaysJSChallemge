@@ -99,18 +99,20 @@ const txtToJSON = JSON.parse(txt, undefined)
 console.log(txtToJSON)
 
 //2 Find the user who has many skills from the variable stored in txt.
-
+const users = Object.keys(JSON.parse(txt)) //get users
+let arr = []
 const findManySkills = JSON.parse(txt, (key, value)=>{
 
-    let skillSets = key === 'Alex' ? value.skills.length : value
-    
-
-
-    return skillSets
+    if(users.includes(key) === true)
+    {
+        arr.push({user: key, count: value.skills.length})
+    }
+    return value
+  
 })
 
-console.log(findManySkills)
-
+arr.sort((a, b) => b.count - a.count)
+console.log(arr[0]) // { user: 'Asab', count: 8 }
 
 
 
