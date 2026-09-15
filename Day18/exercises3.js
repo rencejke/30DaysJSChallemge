@@ -1,3 +1,4 @@
+
 //exercises 3
 
 //#1 Read the cats api and find the average weight of cat in metric unit.
@@ -39,31 +40,38 @@ const fetchCat = async () => {
 
 fetchCat()
 
+
 //#2 Read the countries api and find out the 10 largest countries
 
 const apiKey = 'API_KEY'
-let limit = 100
-let offset = 0
-const url = `https://api.restcountries.com/countries/v5?limit=${limit}&offset=${offset}`
+
+let limit = 100 
+let offset = 0 //where to start or how many to skip
+
+//offset = 0 starts 1
+//offset = 100 starts 101
+//offset = 200 starts 201
+
+let numberOfrequest = 3
 
 const fetchCountries = async() =>
 {
     try{
         
         let allCountries = []
+        for(let i = 0; i < numberOfrequest; i++){
+           
+            const url = `https://api.restcountries.com/countries/v5?limit=${limit}&offset=${offset}`
 
-        for(let i = 0; i < 3; i++){
-
-            offset+=100
+            offset+=limit
 
             const response = await fetch(url, {headers: {'Authorization': `Bearer ${apiKey}` }})
             const countriesData = await response.json()
+            allCountries.push(...countriesData.data.objects) //unpack array of objects
 
-            allCountries.push(countriesData.data.objects)
-            
         }
-        //const finalResult = allCountries.sort((a, b) => b.area.kilometers - a.area.kilometers).slice(0, 10)
-        console.log(allCountries.slice(0,10).length)
+        const finalResult = allCountries.sort((a, b) => b.area.kilometers - a.area.kilometers).slice(0, 10)
+        console.log(finalResult)
 
     }catch(err){
         console.log(err)
@@ -71,3 +79,32 @@ const fetchCountries = async() =>
 }
 
 fetchCountries()
+
+
+//#3 Read the countries api and count total number of languages in the world used as officials.
+
+const apiKey = 'API_KEY'
+
+let limit = 100 
+let offset = 0 //where to start or how many to skip
+let numberOfrequest = 3
+
+const fetchLanguages = async () => {
+    try{
+
+        for(let i = 0; i < numberOfrequest; i++){
+
+        const url = `https://api.restcountries.com/countries/v5?limit=${limit}&offset=${offset}`
+        
+        let count = []
+
+        const response = await fetch(url, {headers: {'Authorization': `Bearer ${apiKey}` }})
+        const countriesLangData = await response.json()
+        
+
+}
+    }catch(e){
+        console.log(e.name)
+        console.log(e.message)
+    }
+}
