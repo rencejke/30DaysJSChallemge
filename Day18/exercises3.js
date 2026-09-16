@@ -1,4 +1,3 @@
-
 //exercises 3
 
 //#1 Read the cats api and find the average weight of cat in metric unit.
@@ -83,7 +82,7 @@ fetchCountries()
 
 //#3 Read the countries api and count total number of languages in the world used as officials.
 
-const apiKey = 'API_KEY'
+const apiKey = ''
 
 let limit = 100 
 let offset = 0 //where to start or how many to skip
@@ -91,20 +90,34 @@ let numberOfrequest = 3
 
 const fetchLanguages = async () => {
     try{
+        let count = []
 
         for(let i = 0; i < numberOfrequest; i++){
 
         const url = `https://api.restcountries.com/countries/v5?limit=${limit}&offset=${offset}`
-        
-        let count = []
-
+    
         const response = await fetch(url, {headers: {'Authorization': `Bearer ${apiKey}` }})
         const countriesLangData = await response.json()
-        
+        const objectCount = countriesLangData.data.objects.length
 
+        for(k = 0; k < objectCount; k++)
+        {
+            const languageCount = countriesLangData.data.objects[k].languages.length
+
+            for(j = 0; j < languageCount; j++){
+            if(count.includes(countriesLangData.data.objects[k].languages[j].name)){
+                count.counts +=1
+            } else {
+                count.push({name: countriesLangData.data.objects[k].languages[j].name, counts: 1})
+            }
+        }
+        }
+        
 }
     }catch(e){
         console.log(e.name)
         console.log(e.message)
     }
 }
+
+fetchLanguages()
