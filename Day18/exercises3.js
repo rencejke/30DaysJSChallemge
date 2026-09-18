@@ -79,10 +79,9 @@ const fetchCountries = async() =>
 
 fetchCountries()
 
-
 //#3 Read the countries api and count total number of languages in the world used as officials.
 
-const apiKey = ''
+const apiKey = 'API_KEY'
 
 let limit = 100 
 let offset = 0 //where to start or how many to skip
@@ -90,29 +89,44 @@ let numberOfrequest = 3
 
 const fetchLanguages = async () => {
     try{
-        let count = []
+        let languages = []
 
         for(let i = 0; i < numberOfrequest; i++){
 
         const url = `https://api.restcountries.com/countries/v5?limit=${limit}&offset=${offset}`
-    
+        
+        offset+=limit 
+
         const response = await fetch(url, {headers: {'Authorization': `Bearer ${apiKey}` }})
         const countriesLangData = await response.json()
+        
+        //get number of objects each request
         const objectCount = countriesLangData.data.objects.length
 
-        for(k = 0; k < objectCount; k++)
-        {
+        for(let k = 0; k < objectCount; k++)
+        {   
+            //get the number of languages count 
             const languageCount = countriesLangData.data.objects[k].languages.length
 
-            for(j = 0; j < languageCount; j++){
-            if(count.includes(countriesLangData.data.objects[k].languages[j].name)){
-                count.counts +=1
-            } else {
-                count.push({name: countriesLangData.data.objects[k].languages[j].name, counts: 1})
+            for(let j = 0; j < languageCount; j++){
+            
+            //find existing languages in languages array
+            const existLang = languages.find((lang) => lang.language === countriesLangData.data.objects[k].languages[j].name)
+            
+            if(existLang){ 
+               existLang.counts +=1 //if existed increase count by 1
+            }else{
+                //if not add the current language and its startting count
+                languages.push({
+                    language: countriesLangData.data.objects[k].languages[j].name,
+                    counts: 1
+                })
             }
+
+    
         }
-        }
-        
+  }
+     console.log(languages)
 }
     }catch(e){
         console.log(e.name)
