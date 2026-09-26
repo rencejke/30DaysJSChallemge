@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id ='p1'>test1</p>
+    <p id ='p2'>test2</p>
+    <p id ='p3'>test3</p>
+    <p id ='p4'>test4</p>
+</body>
+<script>
+
+        //exercises 2
+
+        //#1 Change stye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+        
+        const getAllPara = document.querySelectorAll('p')
+
+        for(let i = 0; i < getAllPara.length; i++){
+            getAllPara[i].style.fontSize = '28px'
+            getAllPara[i].style.color = 'white'
+            getAllPara[i].style.backgroundColor = 'blue'
+            getAllPara[i].style.margin = '5px'
+            getAllPara[i].style.padding = '10px'
+        }
+
+        /* 
+           2. Select all paragraphs and loop through each elements and give the first and
+              third paragraph a color of green, and the second and the fourth paragraph a red color 
+        */  
+            for(let i = 0; i < getAllPara.length; i++){
+                if(i === 0 || i === 2){
+                    getAllPara[i].style.color = 'green'
+                }else if(i === 1 || i === 3){
+                    getAllPara[i].style.color = 'red'
+                }else{
+                    getAllPara[i].style.color = 'black'
+                }
+            }
+
+            for(let i = 0; i < getAllPara.length; i++){
+                getAllPara[i].setAttribute('id', `idAttri${i + 1}`)
+                getAllPara[i].setAttribute('class', `classAttri${i + 1}`)
+                getAllPara[i].textContent = `paragraraph ${i + 1}`
+            }
+
+
+</script>
+</html>
