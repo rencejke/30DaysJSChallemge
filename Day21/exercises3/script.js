@@ -109,8 +109,8 @@ for(let i = 0; i < lists.length; i++)
 {
     lists[i].style.textAlign = 'left'
     lists[i].style.boxSizing = 'border-box'
-    lists[i].style.paddingLeft = '10px'
-    lists[i].style.paddingTop = '20px'
+    lists[i].style.paddingLeft = '20px'
+    lists[i].style.paddingTop = '25px'
     lists[i].style.paddingBottom = '20px'
     lists[i].style.marginTop = '5px'
 
