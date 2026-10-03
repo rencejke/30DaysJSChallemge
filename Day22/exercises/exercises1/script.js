@@ -54,17 +54,23 @@ for(let i = 0; i <= 100; i++){
 
     for(let j = 0; j < paraNumbers.length; j++)
     {
-    
+        //prime numbers can only be divided by 1 itself and itself
+        
         j < 2 ? isPrime = false : isPrime = true
         
+        for(let k = 2; k * k <= j; k++){
+        if(j % k === 0 ){
 
-        if(j % 2 === 0) {
-            paraNumbers[j].style.backgroundColor = 'green'
-        }else if(isPrime)
-        {
-             paraNumbers[j].style.backgroundColor = 'yellow'
+            isPrime = false;
+            break;
+            
         }
-        else{
-            paraNumbers[j].style.backgroundColor = 'red'
-        }
+    }
+    if(isPrime){
+         paraNumbers[j].style.backgroundColor = 'red'
+    } else if(j % 2 === 0) {
+         paraNumbers[j].style.backgroundColor = 'green'
+    } else{
+       paraNumbers[j].style.backgroundColor = 'yellow'
+    }
 }
