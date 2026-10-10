@@ -1,7 +1,7 @@
 let authorHeader = document.createElement('h1')
 let subHeader = document.createElement('h3')
-let timeDateHeader = document.createElement('h4')
 let body = document.querySelector('body')
+let timeDateHeader = document.createElement('h4')
 let container = document.createElement('div')
 let unlisted = document.createElement('ul')
 
@@ -81,8 +81,8 @@ const asabenehChallenges2020 = {
       },
       {
         social: 'DEV.to',
-        fontawesomeIcon: '',
-        url: 'https://dev.to/asabeneh'
+        url: 'https://dev.to/asabeneh',
+        fontawesomeIcon: '<i class="fab fa-dev"></i>'
       }
     ],
     skills: [
@@ -164,7 +164,7 @@ const asabenehChallenges2020 = {
     },
     {
       name: '30 Days Of Fullstack',
-      topics: ['React', 'Redux', 'MongoDB', 'Node', 'MERN'],
+      topics: ['Fullstack', 'React', 'Redux', 'MongoDB', 'Node', 'MERN'],
       days: 30,
       status: 'Coming',
       questions: '',
@@ -174,7 +174,7 @@ const asabenehChallenges2020 = {
     },
     {
       name: '30 Days Of Data Analysis',
-      topics: ['Python', 'Numpy', 'Pandas', 'Statistics', 'Visualization'],
+      topics: ['Data Analysis', 'Python', 'Numpy', 'Pandas', 'Statistics', 'Visualization'],
       days: 30,
       status: 'Coming',
       questions: '',
@@ -185,6 +185,7 @@ const asabenehChallenges2020 = {
     {
       name: '30 Days Of Machine Learning',
       topics: [
+        'Machine Learning',
         'Python',
         'Numpy',
         'Pandas',
@@ -206,6 +207,9 @@ const asabenehChallenges2020 = {
 
 body.style.width = '80%'
 body.style.margin = 'auto'
+body.style.fontFamily = 'Poppins, sans-serif'
+body.style.fontWeight='400';
+
 
 const getCurrentDate = ()  =>{
 
@@ -241,23 +245,14 @@ return {
 }
 
 const getRandomColor = () =>{
-    const colors = [
-        'red',
-        'blue',
-        'green',
-        'yellow',
-        'orange',
-        'purple',
-        'pink',
-        'cyan',
-        'magenta',
-        'lime',
-        'teal',
-        'navy',
-        'brown',
-        'gray',
-        'gold'
-    ]
+
+  const colors = [
+  '#df5080', '#21d99b', '#e5e936', '#9b59b6',
+  '#f1c40f', '#2ecc71', '#3498db', '#e67e22',
+  '#1abc9c', '#95a5a6', '#ff6b6b', '#a3cb38',
+  '#6c5ce7', '#fd79a8', '#00cec9', '#b2bec3'
+];
+
 
     const randomColor = Math.floor(Math.random() * (colors.length))
 
@@ -266,11 +261,11 @@ const getRandomColor = () =>{
 }
 
 document.body.appendChild(authorHeader)
-authorHeader.textContent = `Asabeneh Yetayeh challenges`
+authorHeader.textContent = asabenehChallenges2020.description
 authorHeader.style.textAlign = 'center'
 
 document.body.appendChild(subHeader)
-subHeader.textContent = '30DaysofJavaScript Challenges'
+subHeader.textContent = asabenehChallenges2020.challengeSubtitle
 subHeader.style.textAlign = 'center'
 subHeader.style.fontWeight = 'normal'
 subHeader.style.textDecoration = 'underline'
@@ -278,54 +273,213 @@ subHeader.style.textDecoration = 'underline'
 
 setInterval(() => { //call random color evey 1 seconds
    const headingYear = document.querySelector('h1')
-   headingYear.innerHTML = `30DaysofJavaScript Challenges <span>${getCurrentDate().year}</span>`
+   headingYear.innerHTML = `${asabenehChallenges2020.description} <span>${getCurrentDate().year}</span>`
    const headingYearSpan = document.querySelector('h1 span')
    headingYearSpan.style.color = `${getRandomColor()}`
    headingYearSpan.style.fontSize = '50px'
 
 }, 1000)
 
+document.body.appendChild(timeDateHeader)
+
 setInterval(() =>{
-    document.body.appendChild(timeDateHeader)
     timeDateHeader.textContent = `${getCurrentDate().date}`
     timeDateHeader.style.textAlign = 'center'
     timeDateHeader.style.fontWeight = 'normal'
 }, 1000)
 
-
-
-// const subjects = ['Python', 'JavaScript', 
-//     'HTML & CSS', 'React', 'ReactNative', 'Fullstack', 
-// 'Data Analysis', 'Machine Learning']
-
-
-
 document.body.appendChild(container)
-container.style.display = 'fles'
-container.style.flexWrap = 'wrap'
-container.style.justifyContent = 'senter'
-container.style.gap = '10px'
 container.style.width = '100%'
 container.style.maxWidth = '1000px'
 container.style.margin = '50px auto 0'
-container.style.alignSelf = 'center'
-container.style.flexDirection = 'column'
 
 container.appendChild(unlisted)
 
-for(let i = 0; i < subjects.length; i++){
+//challenges
+for(let i = 0; i < asabenehChallenges2020.challenges.length; i++){
+let challenge = asabenehChallenges2020.challenges[i]
 
 let listed = document.createElement('li')
+let listText = document.createElement('a')
+let listedWrapper = document.createElement('div')
 let details = document.createElement('details')
 let summary = document.createElement('summary')
-let detailsText =  document.createElement('p')
+let status =  document.createElement('p')
 
-listed.textContent = `30 days of ${subjects[i]}`
-listed.style.fontSize = '20px'
+ listed.style.listStyle = 'none'
 
-unlisted.appendChild(listed)
-listed.appendChild(details)
-details.appendChild(summary)
-summary.appendChild(detailsText)
+  listedWrapper.style.display = 'flex'
+  listedWrapper.style.alignItems = 'center'
+  listedWrapper.style.marginTop = '5px'
+  listedWrapper.style.width = '100%'
+  listedWrapper.style.padding = '10px 20px'
+  listedWrapper.style.boxSizing = 'border-box'
+  listedWrapper.style.fontWeight = '500'
+
+  listText.textContent = challenge.name
+  listText.href = '#'
+  listText.style.fontSize = '14px'
+  listText.style.flex = '1' 
+  listText.style.textAlign = 'left'
+
+  summary.textContent = challenge.topics[0]
+  
+    challenge.topics.forEach((topic) => {
+      
+    let detailsText =  document.createElement('p')
+    detailsText.textContent = topic
+    detailsText.style.margin = '4px 0 4px 16px'
+    detailsText.style.fontSize = '14px'
+    details.appendChild(detailsText)
+
+  })
+  
+
+  status.textContent = challenge.status
+  status.style.flex = '1'
+  status.style.textAlign = 'right'
+  status.style.fontSize = '14px'
+
+  unlisted.appendChild(listed)
+  listed.appendChild(listedWrapper)
+  listedWrapper.appendChild(listText)
+  listedWrapper.appendChild(details)
+  details.appendChild(summary)
+  listedWrapper.appendChild(status)
+
+  if(challenge.status.toLowerCase() === 'done'){
+    listedWrapper.style.backgroundColor = '#4F7D32'
+  }else if(challenge.status.toLowerCase() === 'ongoing'){
+    listedWrapper.style.backgroundColor = '#FFD16A'
+  }else {
+    listedWrapper.style.backgroundColor = '#B93636'
+  }
+
 }
+
+let author = document.createElement('h2')
+let authorFullName = author.textContent = asabenehChallenges2020.author.firstName + ' ' +  asabenehChallenges2020.author.lastName
+
+author.textContent = authorFullName
+author.style.textAlign = 'center'
+container.appendChild(author)
+
+let unlistedIcon = document.createElement('ul')
+unlistedIcon.style.textAlign = 'center'
+container.appendChild(unlistedIcon)
+
+
+//social links
+asabenehChallenges2020.author.socialLinks.forEach((social) =>
+{
+    if (!social.fontawesomeIcon) return;
+
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+
+      link.href = social.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', social.social);
+      link.style.color = 'black'
+      link.style.fontSize = '35px'
+
+      li.style.display = 'inline-block';
+      li.style.margin = '3px';
+
+      link.innerHTML = social.fontawesomeIcon;
+      li.appendChild(link);
+      unlistedIcon.appendChild(li);
+      
+})
+
+let authorBio = document.createElement('p');
+authorBio.textContent = asabenehChallenges2020.author.bio;
+authorBio.style.textAlign = 'center';
+authorBio.style.marginTop = '35px';
+authorBio.style.fontSize = '15px';
+container.appendChild(authorBio);
+      
+
+const authorOtherInfosWrapper = document.createElement('div');
+authorOtherInfosWrapper.style.display = 'flex'
+authorOtherInfosWrapper.style.fontSize = '17px'
+authorOtherInfosWrapper.style.justifyContent = 'space-around'
+
+const unlistedOtherInfoOne = document.createElement('ul');
+const unlistedOtherInfoTwo = document.createElement('ul');
+const unlistedOtherInfoThree = document.createElement('ul');
+const listWrapperOneHeader = document.createElement('h5'); 
+const listWrapperTwoHeader = document.createElement('h5'); 
+const listWrapperThreeHeader = document.createElement('h5'); 
+listWrapperOneHeader.textContent = 'Titles' 
+listWrapperTwoHeader.textContent = 'Skills' 
+listWrapperThreeHeader.textContent = 'Qualifications' 
+
+container.appendChild(authorOtherInfosWrapper)
+authorOtherInfosWrapper.appendChild(unlistedOtherInfoOne)
+unlistedOtherInfoOne.appendChild(listWrapperOneHeader)
+unlistedOtherInfoTwo.appendChild(listWrapperTwoHeader)
+unlistedOtherInfoThree.appendChild(listWrapperThreeHeader)
+authorOtherInfosWrapper.appendChild(unlistedOtherInfoTwo)
+authorOtherInfosWrapper.appendChild(unlistedOtherInfoThree)
+      
+
+asabenehChallenges2020.author.titles.forEach((titles) =>{
+      const listTitles = document.createElement('li');
+      listTitles.textContent = titles[0] + titles[1] 
+      listTitles.style.marginBottom = '5px' 
+      unlistedOtherInfoOne.appendChild(listTitles)
+})
+
+asabenehChallenges2020.author.skills.forEach((skills) =>{
+      const listSkills = document.createElement('li');
+      listSkills.textContent = '✅' + skills 
+      listSkills.style.marginBottom = '5px' 
+      unlistedOtherInfoTwo.appendChild(listSkills)
+})
+
+asabenehChallenges2020.author.qualifications.forEach((qualifications) =>{
+      const listQualifications = document.createElement('li');
+      listQualifications.textContent = qualifications
+      listQualifications.style.marginBottom = '5px' 
+      unlistedOtherInfoThree.appendChild(listQualifications)
+})
+
+
+const keywords = document.createElement('div')
+const keywordsHeader = document.createElement('h3')
+const unlistedKeyWords = document.createElement('ul')
+
+keywordsHeader.textContent = 'Keywords'
+
+unlistedKeyWords.style.display = 'flex'
+unlistedKeyWords.style.flexWrap = 'wrap'
+unlistedKeyWords.style.gap = '7px'
+unlistedKeyWords.style.justifyContent = 'center'
+unlistedKeyWords.style.alignItems = 'center'
+
+container.appendChild(keywords)
+keywords.appendChild(keywordsHeader)
+keywords.appendChild(unlistedKeyWords)
+
+
+asabenehChallenges2020.keywords.forEach((words) =>{
+      const listWords = document.createElement('li');
+  
+      listWords.textContent =  `# ${words}`;
+      listWords.style.backgroundColor = getRandomColor();
+      listWords.style.padding = '5px';     
+      listWords.style.borderRadius = '10px'   
+      listWords.style.fontStyle = 'italic';  
+      listWords.style.marginBottom = '5px';
+      unlistedKeyWords.appendChild(listWords);
+
+})
+
+
+
+
+
+
 
