@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Events</title>
+</head>
+<body>
+    <!-- <button onClick=clickMe(e)>Click Me</button> -->
+    <button>Click Me</button>
+</body>
+<script>
+//     const clickMe = (e) =>{
+
+//         console.log('e gives the event listener object:', e)
+//         console.log('e.target gives the selected element: ', e.target)
+//         console.log(
+//           'e.target.textContent gives content of selected element: ',
+//           e.target.textContent
+//         )
+
+// }
+
+    // const button = document.querySelector('button')
+    // button.addEventListener('click', e =>{
+    //     console.log('e gives the event listener object:', e)
+    //     console.log('e.target gives the selected element: ', e.target)
+    //     console.log(
+    //       'e.target.textContent gives content of selected element: ',
+    //       e.target.textContent)
+    // })
+
+
+    // const button = document.querySelector('button')
+    // button.addEventListener('mouseover', e =>{
+    //     console.log('e gives the event listener object:', e)
+    //     console.log('e.target gives the selected element: ', e.target)
+    //     console.log(
+    //       'e.target.textContent gives content of selected element: ',
+    //       e.target.textContent)
+    // })
+
+        // const button = document.querySelector('button')
+        // button.addEventListener('mousemove', e =>{
+        //     console.log(e.type);
+        //     console.log('e gives the event listener object:', e)
+        //     console.log('e.target gives the selected element: ', e.target)
+        //     console.log(
+        //     'e.target.textContent gives content of selected element: ',
+        //     e.target.textContent)
+        // }) 
+
+         const button = document.querySelector('button')
+        button.addEventListener('mouseout', e =>{
+            console.log(e.type);
+            console.log('e gives the event listener object:', e)
+            console.log('e.target gives the selected element: ', e.target)
+            console.log(
+            'e.target.textContent gives content of selected element: ',
+            e.target.textContent)
+        }) 
+
+</script>
+</html>
