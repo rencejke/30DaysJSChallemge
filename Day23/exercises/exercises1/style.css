@@ -3,7 +3,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	width: 80%;
+	width: 50%;
 	margin: auto;
 }
 ol, ul {
@@ -48,4 +48,23 @@ table {
 	border-style: none;
 	background-color: green;
 	color: white;
+}
+.numberWrapper
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	max-width: 1000px;
+	padding: 10px;
+	align-self: center;
+	gap: 10px;
+	font-size: 23px;
+}
+.numberWrapper p{
+	padding: 10px 13px;	
+	background-color: cadetblue;
+	width: 100px;
+	text-align: center;
+	font-weight: bold;
 }
