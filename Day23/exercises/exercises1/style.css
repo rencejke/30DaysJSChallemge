@@ -41,34 +41,40 @@ table {
 	padding: 10px;
 	width: 100%;
 	font-size: 15px;
-	border: 2px solid green;
+	border: 2px solid #66BB6A;
 }
 
 .inputWrapper button{
-	width: 50%;
-	font-size: 15px;
+	width: 15%;
 	border-style: none;
-	background-color: green;
+	font-size: 15px;
+	background-color: #66BB6A;
 	color: white;
+}
+.inputWrapper input{
+	width: 65%;
+	margin-left: 70px;
 }
 .numberWrapper
 {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	width: 100%;
 	max-width: 1000px;
 	padding: 10px;
 	align-self: center;
-	gap: 10px;
-	font-size: 23px;
+	gap: 5px;
+	font-size: 25px;
 	color: white;
 }
 .numberWrapper p{
+	margin: 0;
 	padding: 10px 13px;	
-	background-color: cadetblue;
 	width: 100px;
+	height: 20px;
 	text-align: center;
 	font-weight: bold;
 }
+
+
 
