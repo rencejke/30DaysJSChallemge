@@ -21,6 +21,73 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-h1{
+.header-details{
     text-align: center;
+	margin: 0;
+	background-color: #F0F0F0;
+	padding: 10px 0px;
+}
+.header-details h1{
+    color: #F2A93B;
+	font-weight: 500;
+}
+.countries-btn-wrapper{
+ 	text-align: center;
+	background-color: #FFFFFF;
+	padding-top: 20px;
+	/* border: 2px solid red; */
+}
+.countries-btn-wrapper button{
+ 	padding: 10px 15px;
+	margin: 3px;
+	background-color: #F2A93B;
+    border-style: none;
+	cursor: pointer;
+}
+.countries-data-Wrapper
+{
+	padding: 20px max(20px, calc((100% - 900px) / 2));
+	background-color: #F0F0F0;
+	min-height: 500px;
+}
+.countries-data-Wrapper .countryRow
+{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+
+}
+.countries-data-Wrapper .countryName
+{
+	width: 130px;
+	margin: 0;
+	font-size: 18px;
+
+}
+.countries-data-Wrapper .progressBar
+{
+	flex: 1;
+	padding: 5px;
+}
+
+.countries-data-Wrapper .progressBarFill
+{
+	display: block;
+	height: 32px;
+	background-color: #F2A93B;
+	
+}
+.countries-data-Wrapper .countryValue
+{
+	width: 130px;
+	font-size: 14px;
+
+}
+.validation
+{
+	text-align: center;
+	padding: 20px;
+	font-weight: 600;
+	background-color: #F2A93B;
 }
