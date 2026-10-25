@@ -1,16 +1,22 @@
 const chart = document.querySelector('#chart');
 const populationBtn = document.querySelector('.population-btn');
 const languagesBtn = document.querySelector('.languages-btn');
-const apiKey  = '';
+const countriesBtnData = document.querySelector('.countries-btn-txt');
+const countriesCount = document.querySelector('.countries-count');
+const apiKey  = 'API_KEY';
 
 const limit = 100; 
 const numberOfRequest = 3
+let topNumbers = 10;
+
 
 
 
 const fetchCountriesPopulation = async () =>{
 
+   countriesBtnData.innerHTML = '';
    chart.innerHTML = '<p class="validation">Loading Data....</p>'
+   countriesCount.textContent = 'Loading data....'
    let offset = 0;
 
     try{
@@ -27,10 +33,15 @@ const fetchCountriesPopulation = async () =>{
           const countriesData = await response.json();
 
           countries.push(...countriesData.data.objects)
+
   }
-  
-    const top10Countries = countries.sort((a, b) => b.population - a.population).slice(0, 10);
+   
+    const top10Countries = countries.sort((a, b) => b.population - a.population).slice(0, topNumbers);
     const max = top10Countries[0].population;
+
+    countriesCount.textContent = `Currently, we have ${countries.length} countries`
+
+    countriesBtnData.innerHTML = `${topNumbers} most populated countries in the World`
 
     chart.innerHTML = top10Countries.map((country) =>`
      <div class="countr-row">
@@ -49,12 +60,16 @@ const fetchCountriesPopulation = async () =>{
 
 const fetchCountriesLanguages = async () =>{
 
+    countriesBtnData.innerHTML = '';
+
     chart.innerHTML = '<p class="validation">Loading Data....</p>'
     let offset = 0;
-
+    countriesCount.textContent = 'Loading data....'
+    
     try{
         
-        let languages = [];
+        const languages = [];
+        const countries = [];
 
         for(let i = 0; i < numberOfRequest; i++){
 
@@ -64,7 +79,7 @@ const fetchCountriesLanguages = async () =>{
 
           const response = await fetch(url,{headers: {'Authorization': `Bearer ${apiKey}` } });
           const countriesData = await response.json();
-          const countries = [...countriesData.data.objects];
+          countries.push(...countriesData.data.objects)
 
           countries.forEach((language) =>{
             language.languages.forEach((lang)=>{
@@ -78,11 +93,12 @@ const fetchCountriesLanguages = async () =>{
                 }})
           })
   }
-   const countryTop10Languages = languages.toSorted((a, b) => b.count - a.count).slice(0, 10);
+   const countryTop10Languages = languages.toSorted((a, b) => b.count - a.count).slice(0, topNumbers);
    const max = countryTop10Languages[0].count;
+  
+  countriesCount.textContent = `Currently, we have ${countries.length} countries`;
+  countriesBtnData.innerHTML = `${topNumbers} most Spoken Languages in the World`;
 
-   console.log(countryTop10Languages)
-   console.log(max)
 
   chart.innerHTML = countryTop10Languages.map(({language, count}) => `
     <div class ="countr-row">

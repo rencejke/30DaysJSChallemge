@@ -30,6 +30,7 @@ table {
 .header-details h1{
     color: #F2A93B;
 	font-weight: 500;
+	font-size: clamp(1.7rem, 4vw, 2rem);
 }
 .countries-btn-wrapper{
  	text-align: center;
@@ -92,4 +93,8 @@ table {
 	padding: 20px;
 	font-weight: 600;
 	background-color: #F2A93B;
+}
+.countries-btn-txt
+{
+	font-size: clamp(.9rem, 4vw, 1.25rem);
 }
