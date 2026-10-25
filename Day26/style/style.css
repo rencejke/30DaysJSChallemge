@@ -1,0 +1,48 @@
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	margin: 0;
+	line-height: 1;
+    font-family: 'Poppins', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.header-wrapper-details, 
+.header-wrapper-btn, .header-search-wrapper {
+    text-align: center;
+}
+/* .header-wrapper
+{
+    background-image: url('/Day26/img/chuttersnap-aku7Zlj_x_o-unsplash.jpg');
+} */
+.header-wrapper-btn button{
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: #895BE6;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+}
+.header-search-wrapper {
+    margin-top: 20px;
+}
+.header-search-wrapper input 
+{
+    width: 30%;
+    height: 30px;
+    border-radius: 15px;
+}
