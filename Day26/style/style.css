@@ -5,6 +5,7 @@ body {
 	margin: 0;
 	line-height: 1;
     font-family: 'Poppins', sans-serif;
+    background-color: #FEFEE4;
 }
 ol, ul {
 	list-style: none;
@@ -25,10 +26,13 @@ table {
 .header-wrapper-btn, .header-search-wrapper {
     text-align: center;
 }
-/* .header-wrapper
+.header-wrapper
 {
-    background-image: url('/Day26/img/chuttersnap-aku7Zlj_x_o-unsplash.jpg');
-} */
+    background: linear-gradient(rgba(20, 30, 60, 0.55), rgba(20, 30, 60, 0.55)), url('/Day26/img/chuttersnap-aku7Zlj_x_o-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 200px;
+}
 .header-wrapper-btn button{
     padding: 10px 20px;
     text-transform: uppercase;
@@ -40,9 +44,78 @@ table {
 .header-search-wrapper {
     margin-top: 20px;
 }
+.header-wrapper .header-wrapper-details p{
+        color: white;
+}
+.header-wrapper .header-wrapper-details  h1
+{
+    margin: 0;
+    font-size: 55px;
+    color: white;
+    letter-spacing: .5ch;
+}
+.header-search-wrapper
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px
+}
 .header-search-wrapper input 
 {
-    width: 30%;
-    height: 30px;
+    width: 40%;
+    height: 35px;
     border-radius: 15px;
+    border: none;
 }
+.header-search-wrapper input::placeholder {
+  text-align: center;
+}
+
+.header-search-wrapper i 
+{
+    font-size: 20px;
+    color: white;
+}
+.header-search-wrapper .search-btn
+{
+    background: none;
+    border-style: none;
+}
+.countries-data-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.countries-data-wrapper{
+
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-self: center;
+    margin: 50px auto 0;
+    max-width: 1000px;
+
+}
+
+.countries-data-wrapper .country-row .country-name
+{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+
+    width: 150px;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    flex: 0 0 150px;
+
+    background: linear-gradient(rgba(20, 30, 60, 0.55), rgba(20, 30, 60, 0.55)), url('/Day26/img/andrew-stutesman-l68Z6eF2peA-unsplash.jpg');
+    background-size: contain;
+}
+
