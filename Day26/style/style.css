@@ -22,60 +22,62 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-.header-wrapper-details, 
-.header-wrapper-btn, .header-search-wrapper {
-    text-align: center;
-}
 .header-wrapper
 {
     background: linear-gradient(rgba(20, 30, 60, 0.55), rgba(20, 30, 60, 0.55)), url('/Day26/img/chuttersnap-aku7Zlj_x_o-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 200px;
+    padding: clamp(20px, 10vw, 200px);
 }
+.header-wrapper-details, 
+.header-wrapper-btn, .header-search-wrapper {
+    text-align: center;
+}
+
+.header-wrapper .header-wrapper-details p{
+    color: white;
+}
+.header-wrapper .header-wrapper-details  h1
+{
+    margin: 0;
+    font-size: clamp(30px, 4vw, 55px);
+    color: white;
+    letter-spacing: .5ch;
+}
+
 .header-wrapper-btn button{
     padding: 10px 20px;
     text-transform: uppercase;
     background-color: #895BE6;
     color: white;
     border-style: none;
+    font-size: clamp(9px, 2vw, 15px);
     cursor: pointer;
     transition: transform 0.1s, box-shadow 0.1s, background 0.1s;
 }
-
-.header-wrapper-btn button.active {
-    background-color: #000;
-    color: #fff;
-}
-
 .header-wrapper-btn button:active {
   transform: translateY(2px) scale(0.97);
   background: #6d3fd1;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
 }
+.header-wrapper-btn button.active {
+    background-color: #000;
+    color: #fff;
+}
 .header-search-wrapper {
     margin-top: 20px;
 }
-.header-wrapper .header-wrapper-details p{
-        color: white;
-}
-.header-wrapper .header-wrapper-details  h1
-{
-    margin: 0;
-    font-size: 55px;
-    color: white;
-    letter-spacing: .5ch;
-}
+
 .header-search-wrapper
 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px
+    gap: clamp(2px, 2vw, 15px)
 }
 .header-search-wrapper input 
 {
-    width: 40%;
+    width: 50%;
     height: 35px;
     border-radius: 15px;
     border: none;
@@ -84,36 +86,29 @@ table {
   text-align: center;
 }
 
-.header-search-wrapper i 
-{
+.header-search-wrapper i {
     font-size: 20px;
     color: white;
 }
-.header-search-wrapper .search-btn
-{
+.header-search-wrapper .search-btn{
     background: none;
     border-style: none;
 }
+
 .countries-data-wrapper{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
 
-.countries-data-wrapper{
-
-    display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: clamp(30px, 3vw, 50px);
     align-self: center;
-    margin: 50px auto 0;
+    margin: clamp(20px, 5vw, 50px) auto 0;
     max-width: 1000px;
-
+    height: 50vh;
 }
 
-.countries-data-wrapper .country-row .country-name
-{
-
+.countries-data-wrapper .country-row .country-name{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,8 +121,23 @@ table {
     padding: 10px;
     box-sizing: border-box;
     flex: 0 0 150px;
-
+    
     background: linear-gradient(rgba(20, 30, 60, 0.55), rgba(20, 30, 60, 0.55)), url('/Day26/img/andrew-stutesman-l68Z6eF2peA-unsplash.jpg');
     background-size: contain;
 }
 
+
+@media(max-width: 480px){
+  .hheader-wrapper-details, .header-wrapper-btn{
+    width: 100%;
+  }
+  .header-wrapper-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+   .header-search-wrapper input{
+        width: 100%;
+        height: 30px;
+   }
+}

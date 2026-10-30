@@ -12,7 +12,6 @@ const apiKey = '';
 let isStartingWord = false;
 let isSearchWithAnyWord = false;
 let sortBy = false;
-let isClick = false;
 let limit = 100; 
 let numberOfRequest = 3;
 let countriesCount = 0;
@@ -96,14 +95,8 @@ isSearchWithAnyWordBtn.addEventListener('click', ()=>{
 });
 
 sortByBtn.addEventListener('click', ()=>{
-   if(isClick){
-    sortBy = false;
-    isClick = false;
-   }else{
-      sortBy = true
-      isClick = true;
-   }
-   sortByBtn.classList.toggle('active');
+    sortBy = !sortBy;
+    sortByBtn.classList.toggle('active');
 });
 
 searchBtn.addEventListener('click', ()=>{
