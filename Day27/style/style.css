@@ -1,0 +1,128 @@
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	margin: 50px auto 0;
+	width: 80%;
+	line-height: 1;
+    font-family: 'Poppins', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.header{
+	font-size: clamp(40px, 3vw, 70px);
+	letter-spacing: .3ch;
+	font-weight: 300;
+}
+
+.header-jobs{
+	background-color: #EDDFDE;
+	padding: 30px;
+	font-size: clamp(14px, 3vw, 20px);
+}
+#headerJob {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+}
+#headerJob.slide-in {
+	animation: slideIn 1.2s ease-out forwards;
+}
+
+.header-description{
+	font-size: 20px;
+	word-spacing: .5ch;
+	text-align: justify;
+	line-height: 2;     
+}
+.subject-wrapper{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.subject-wrapper p {
+	width: 20%;
+	max-width: 500px;
+	padding: 100px 30px;
+	font-size: clamp(14px, 3vw, 22px);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+	text-transform: uppercase;
+	text-align: center;
+	transition: transform 0.1s;
+	box-sizing: border-box;
+}
+.subject-wrapper p:hover{
+	background-color: #EDDFDE;
+	transform: scale(1.1);
+}
+footer {
+	display: flex;
+	gap: 5px;
+}
+
+#footerDescription.slide-in {
+	animation: slideIn 1.2s ease-out forwards;
+}
+footer .footer-text {
+	font-size: clamp(17px, 3vw, 20px);
+	align-self: center;
+	justify-self: center;
+}
+footer .footer-skills {
+	text-transform: uppercase;
+	font-size: clamp(29px, 3vw, 40px);
+	font-weight: 700;
+}
+@media(max-width: 768px){
+  .header-description{
+	font-size: 15px;
+	word-spacing: 0ch;
+	text-align: justify;
+}
+.subject-wrapper{
+	flex-direction: column;
+	align-items: center;  
+	width: 100%;
+}
+.subject-wrapper p{
+	width: 80%;
+	max-width: 332px;
+	box-sizing: border-box;
+}
+.subject-wrapper p{
+	padding: 20px;
+}
+.footer-text {
+	font-size: 15px;
+}
+footer{
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+}
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
