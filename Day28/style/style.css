@@ -65,51 +65,65 @@ h1, .input-data-wrapper{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 950px;
+    margin: auto;
  }
  .leaderboard-data-row{
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background-color: var(--primary-bg-color);
 
  }
-  .leaderboard-data-row 
+
+ /* Name + date column */
   .leaderboard-data-row-name-date{
+   flex: 0 0 300px;  /* don't grow, don't shrink, always width 300px */
+   min-width: 0;    /* lets the content shrink/wrap inside  */
+   margin: 0 10px;
    display: flex;
    align-items: center;
    text-transform: uppercase;
-   margin: 0 10px 0;
    gap: clamp(5px, 3vw, 50px)
   }
 
-  .leaderboard-data-row .leaderboard-data-row-name-date
-  .name-and-date-wrapper p:nth-child(1),
-  .leaderboard-data-row-name-date .country {
+.name-and-date-wrapper {
+    min-width: 0;      
+}
+.name-and-date-wrapper p {
+    overflow-wrap: anywhere; /* breaks long words like full name */
+}
+.name-and-date-wrapper p:nth-child(1),
+  .leaderboard-data-row-name-date {
     font-size: 20px;
-  }
-   .leaderboard-data-row .leaderboard-data-row-name-date
-  .name-and-date-wrapper p:nth-child(2) {
+}
+ /* Country column */
+
+.name-and-date-wrapper p:nth-child(2) {
     font-size: 15px;
     color: var(--secondary-bg-color)
-  }
- .leaderboard-country-score{
+}
+
+.leaderboard-country-country, 
+.leaderboard-country-score{
     display: flex;
+    flex: 0 0 180px;
     align-items: center;
     justify-content: center;
-    gap: 50px;
     font-size: 20px;
  }
- .leaderboard-data-row .leader-data-buttons {
+
+.leader-data-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     font-size: 15px;
-    margin: 0 70px 0;
+    margin: 0 20px 0 auto; 
  }
- .leaderboard-data-row 
- .leader-data-buttons button {
+
+.leader-data-buttons button {
     background-color: var(--third-bg-color);
     padding: 15px;
     border-radius: 70%;
@@ -117,12 +131,18 @@ h1, .input-data-wrapper{
     cursor: pointer;
  }
  
- .leaderboard-data-row 
- .leader-data-buttons button i {
+.leader-data-buttons button i {
     color: red;
  }
 @media (max-width: 768px) {
-    .input-data-wrapper{
+    .leaderboard-data-row-name-date{
+      flex: 0 0 50px;
+}
+.leaderboard-country-country, 
+.leaderboard-country-score{
+    flex: 0 0 50px;
+}
+.input-data-wrapper{
     flex-direction: column;
     width: 100%;
 }
@@ -145,5 +165,7 @@ h1, .input-data-wrapper{
  }
  .leader-data-buttons{
     padding-bottom: 20px;
+    align-self: center;
+    margin: auto;
  }
 }
