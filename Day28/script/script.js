@@ -7,8 +7,11 @@ const addPlayer = document.querySelector('.add-player');
 const leaderboardDataWrapper = document.querySelector('.leaderboard-data-wrapper');
 
 validation.innerHTML = '';
-
 let users = [];
+
+//initialize data from the saved data from local storage
+let savedUsersLocal = localStorage.getItem('users');
+users = JSON.parse(savedUsersLocal) || [];
 
 const validate = () =>{
 
@@ -45,8 +48,6 @@ return formattedDate
 }
 const userIdGenerator = () =>{
 
-console.log('Generating ID');
-
 const characters = [
   'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
   'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
@@ -62,15 +63,16 @@ for(let i = 0; i < numberOfCharacters; i++){
     const random =  Math.floor(Math.random() * characters.length);
     id+=characters[random]; 
 }
+      console.log('Generated ID:', id);
       addUser(id);
 }
 const addUser = (id) =>{
-
-//     users.forEach((user) =>{
-//         if(user.id.includes(id)){
-//         userIdGenerator();
-//     } 
-// });
+    const checkUser = users.some((user) => user.id === id)
+   
+    if(checkUser){
+        userIdGenerator;
+        return;
+    }
 
     const newUser = {
          'id': id,
@@ -79,9 +81,26 @@ const addUser = (id) =>{
          'country': country.value,
          'score': Number(score.value)
     };
+
+    console.log('Before push:', users);
     users.push(newUser);
+    console.log('After push:', users);
+
     renderLeaderboard();
+    saveLocalUser();
+
+    firstName.value = '';
+    lastName.value = '';
+    country.value = '';
+    score.value = '';
 }
+
+const saveLocalUser = () => {
+    const userJSON = JSON.stringify(users, undefined, 4);
+    localStorage.setItem('users', userJSON);
+    console.log(localStorage);
+}
+
 const renderLeaderboard = () =>{
 
 if(users.length === 0){
@@ -129,13 +148,16 @@ const updateUserScore = (event) =>{
     } else if (event.target.closest('.leader-data-buttons-delete')) {
         deleteUser(userClicked.id);
     }
+    saveLocalUser();
     renderLeaderboard();
 }
 const deleteUser = (id) =>{
     users = users.filter((user)=> user.id !== id);
     console.log(`Deleted ${id}`);
+    saveLocalUser();
     renderLeaderboard();
 }
+
 leaderboardDataWrapper.addEventListener('click', (event) => {
     updateUserScore(event);
 });
@@ -145,6 +167,7 @@ addPlayer.addEventListener('click', ()=>{
 
 
 
+renderLeaderboard();
 
 
 
