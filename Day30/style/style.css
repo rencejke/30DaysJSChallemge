@@ -1,0 +1,63 @@
+:root{
+	 --primary-bg-color: #F2A93B;
+}
+
+
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	margin: 50px auto 0;
+	width: 80%;
+	line-height: 1;
+    font-family: 'Poppins', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.header-data-wrapper{
+ text-align: center;
+}
+
+.header-data-wrapper .header-data-title{
+ font-size: 23px;
+  color: #F2A93B;
+}
+.header-data-wrapper .header-data-countries-length, 
+.header-data-search-info{
+ 	font-size: 15px;
+}
+.countries-find-wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.countries-find-order{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.countries-find-order button{
+	width: 170px;
+	padding: 10px;
+	background-color: var(--primary-bg-color);
+	border-style: none;
+}
