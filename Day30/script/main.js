@@ -53,7 +53,7 @@ const checkDataCapital = (a, b) =>{
             if(!b.capital){
                 return -1;
             }
-}
+};
 const checkDataName = (a, b) =>{
     if(!a.name && !b.name){
          return 0;
@@ -64,7 +64,7 @@ const checkDataName = (a, b) =>{
      if(!b.name){
          return -1;
     }
-}
+};
 const checkDataPopulation = (a, b) =>{
     if(!Number.isFinite(a.population) && !Number.isFinite(b.population)){
             return 0;
@@ -75,7 +75,7 @@ const checkDataPopulation = (a, b) =>{
      if(!Number.isFinite(b.population)){
             return -1;
      }
-}
+};
 const getCountries = (searchCountry, orderByName, orderByCapital, orderByPopulation, sortBy) =>{
   
  //regExpression (filter)
@@ -111,7 +111,7 @@ const getCountries = (searchCountry, orderByName, orderByCapital, orderByPopulat
         return a.name.localeCompare(b.name);
     });
 
-    }
+}
     else if (sortBy === 'capital') {
 
         let order = orderByCapital ? 'desc' : 'asc'
@@ -178,8 +178,6 @@ const getCountries = (searchCountry, orderByName, orderByCapital, orderByPopulat
   `).join('');
 
 };
-
- 
 const getPopulation = (searchCountry) =>{
      //regExpression (filter)
     const regExFlag  = 'i';
@@ -204,8 +202,7 @@ const getPopulation = (searchCountry) =>{
      </div>
      <p class="country-value">${country.population.toLocaleString()}</p>
      </div>`).join('');
-}
-
+};
 const getLanguage = (searchCountry) =>{
      //regExpression (filter)
 
@@ -245,8 +242,7 @@ const getLanguage = (searchCountry) =>{
      </div>
      <p class="country-value">${count}</p>
      </div>`).join('');
-}
-
+};
 countryOrderByNameBtn.addEventListener('click', ()=>{
     hiddenArrows();
     isOrderByName = !isOrderByName;
@@ -274,7 +270,6 @@ countryOrderByPopulationBtn.addEventListener('click', ()=>{
     showHideArrows(countryOrderByPopulationBtn, isOrderByPopulation);
     getCountries(searchValue, isOrderByName, isOrderByCapital, isOrderByPopulation, sortBy);
 });
-
 searcbCountries.addEventListener('input', ()=>{
     searchValue  = searcbCountries.value;
     getCountries(searchValue, isOrderByName, isOrderByCapital, isOrderByPopulation, sortBy);
@@ -282,10 +277,10 @@ searcbCountries.addEventListener('input', ()=>{
 });
 populationBtn.addEventListener('click', ()=>{
     getPopulation(searchValue);
-})
+});
 languageBtn.addEventListener('click', ()=>{
     getLanguage(searchValue);
-})
+});
 
 
 
