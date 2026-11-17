@@ -1,16 +1,22 @@
 :root{
 	 --primary-bg-color: #F2A93B;
+	 --secondary-bg-color: #F0EDF0;
+	 --validation: red;
 }
 
-
+* {
+    box-sizing: border-box;
+}
+button{
+	cursor: pointer;
+}
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	margin: 50px auto 0;
-	width: 80%;
 	line-height: 1;
     font-family: 'Poppins', sans-serif;
+	background-color: var(--secondary-bg-color);
 }
 ol, ul {
 	list-style: none;
@@ -34,30 +40,191 @@ table {
 
 .header-data-wrapper .header-data-title{
  font-size: 23px;
-  color: #F2A93B;
+ color: var(--primary-bg-color);
 }
-.header-data-wrapper .header-data-countries-length, 
-.header-data-search-info{
- 	font-size: 15px;
+.header-data-wrapper .header-data-search-info{
+  color: var(--primary-bg-color);
+  font-style: italic;
+  font-weight: 400;
 }
 .countries-find-wrapper{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 10px;
+	width: 100%;
+	gap: 15px;
+	padding: 20px;
+	background-color: white;
 }
 .countries-find-order{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
 }
 
 .countries-find-order button{
-	width: 170px;
-	padding: 10px;
+	position: relative;  
+	padding: 12px 40px;
+	width: 100%;
+	border-radius: 20px;
 	background-color: var(--primary-bg-color);
 	border-style: none;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.countries-find-order button .fa-arrow-up, 
+.countries-find-order button .fa-arrow-down{
+	position: absolute;
+	top:50%;
+	right: 25px;
+	transform: translateY(-50%);
+}
+.countries-find-search{
+	width: 50%;
+}
+.countries-find-search-input{
+	width: 100%;
+	padding: 15px 10px;
+	border-radius: 20px;
+	border: 1px solid gray;
+}
+.countries-find-search-input::placeholder{
+	font-size: 17px;
+	font-weight: 100;
+	padding: 10px;
+}
+.countries-btn-wrapper{
+	margin-top: 15px;
+ 	display: flex;
+	justify-content: center;
+	gap: 10px;
+	text-align: center;
+}
+.countries-btn-wrapper button{
+	background-color: var(--primary-bg-color);
+	border-style: none;
+	width: 130px;
+}
+.countries-find-order-chart{
+	color: var(--primary-bg-color);
+	font-size: 35px;
+}
+.countries-data-wrapper {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	gap: 20px;
+}
+.countries-data-wrapper-row{
+	/* grow, shrink, how many cards per row */
+	/* wrapper has 20px gap so i need to multiply it 
+	by 20 * 7 and divided by it by 7 */
+	padding: 20px 15px;
+	padding-bottom: 100px;
+	flex: 0 0 calc((100% - 80px) / 5); 
+	min-width: 0;
+	overflow-wrap: normal;
+	word-break: normal;
+	hyphens: auto;
+	background-color: white;
+	border-radius: 5px;
+
+}
+.countries-data-image {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.countries-data-image img {
+	width: 100%;
+	height: 90px;             
+	object-fit: contain;
+}
+.countries-data-name {
+	color: var(--primary-bg-color);
+	font-weight: 500;
+	font-size: 17px;
+}
+.coutries-data-details {
+	margin: 3px;
+	font-size: 17px;
+}
+.countries-find-order-name, 
+.countries-find-order-capital,
+.countries-find-order-population{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+.hidden-arrow{
+ display: none;
+}
+.show-arrow{
+  display: block;
+}
+
+.countries-data-visualizer-wrapper{
+	padding: 20px max(20px, calc((100% - 900px) / 2));
+	background-color: #F0F0F0;
+	min-height: 500px;
+}
+.countries-data-visualizer-wrapper .countr-row, 
+.countries-data-visualizer-wrapper .country-language {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+
+}
+.countries-data-visualizer-wrapper .country-name,
+.countries-data-visualizer-wrapper .country-language{
+	width: 130px;
+	margin: 0;
+	font-size: 18px;
+
+}
+.countries-data-visualizer-wrapper .progress-bar{
+	flex: 1;
+	padding: 5px;
+}
+
+.countries-data-visualizer-wrapper .progress-bar-fill{
+	display: block;
+	height: 32px;
+	background-color: #F2A93B;
+	
+}
+.countries-data-visualizer-wrapper .country-value{
+	width: 130px;
+	font-size: 14px;
+
+}
+
+@media(max-width: 480px){
+	.countries-find-order{
+		flex-direction: column;
+	}
+	 .countries-data-wrapper{
+		flex-direction: column;
+	 }
+	 .countries-data-wrapper-row{
+		width: 100%;
+		overflow-wrap: break-word;
+		
+	 }
+	.countries-find-search{
+	width: 100%;
+   }
+	.countries-find-search-input::placeholder{
+	font-size: 11px;
+
+}
 }
