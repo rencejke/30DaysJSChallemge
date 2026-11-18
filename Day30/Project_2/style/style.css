@@ -1,0 +1,82 @@
+:root{
+	 --primary-bg-color: #F2A93B;
+}
+
+* {
+    box-sizing: border-box;
+}
+button{
+	cursor: pointer;
+}
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: 'Poppins', sans-serif;
+	background-color: var(--secondary-bg-color);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1{
+    text-align: center;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;         
+    margin: 0 auto;        
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form-row label {
+    font-size: 1.1rem;
+    color: #333;
+}
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="password"],
+.form-row input[type="tel"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+.form-row input:focus{
+    border-color: #888;
+}
+
+.form-row input[type="submit"]{
+    background: #000;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-self: flex-start; 
+    border: none;
+   
+}
